@@ -31,7 +31,7 @@ const showNextQuestion = (i) => {
       nextButton.setAttribute('hidden', true)
       resultButton.removeAttribute('hidden')
     }
-    console.log(index)
+
     index += 1
     console.log(index)
   }
@@ -39,17 +39,26 @@ const showNextQuestion = (i) => {
 
 const showPrevQuestion = (i) => {
 
-  if (i === 1) {
-    const currentQuestion = formQuestions[i]
-    const prevQuestion = formQuestions[(i - 1)]
 
-    backButton.setAttribute('hidden', true)
+  if (i >= 1) {
+    const currentQuestion = formQuestions[i]
+    const prevQuestion = formQuestions[(i - 1) % formQuestions.length]
+
     currentQuestion.setAttribute('hidden', true)
     prevQuestion.removeAttribute('hidden')
-  }else if ()
+
+    if (i === formQuestions.length - 1) {
+      resultButton.setAttribute('hidden', true)
+      nextButton.removeAttribute('hidden')
+    }
+    if (i === 1) {
+      backButton.setAttribute('hidden', true)
+    }
+  }
 
   index -= 1
 
+  console.log(index)
 }
 
 

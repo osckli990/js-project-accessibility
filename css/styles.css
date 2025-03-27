@@ -68,6 +68,7 @@ li {
 
 #banner {
   height: auto;
+  display: none;
 }
 
 #banner img {
@@ -90,7 +91,8 @@ main {
   background-color: #121934;
   color: white;
   flex: 1;
-  display: flex;
+  display: none;
+  /*display: flex*/
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -122,9 +124,24 @@ main {
 /* Ta bort display none sen  */
 #quiz-section {
 
-  display: none;
+  display: block;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-questions {
+  flex-direction: column;
+}
+
 
 #footer {
   background-color: #1a2d6f;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

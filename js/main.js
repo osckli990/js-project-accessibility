@@ -1,5 +1,8 @@
 const formQuestions = Array.from(document.getElementsByClassName('form-questions'))
 const nextButton = document.getElementById('next-button')
+const backButton = document.getElementById('back-button')
+const resultButton = document.getElementById('result-button')
+
 
 console.log(formQuestions)
 
@@ -8,40 +11,53 @@ let index = 0;
 
 
 
-
+//function that ensures the right buttons and questions are showing at the right time
 const showNextQuestion = (i) => {
 
+
+
   if (i >= (formQuestions.length - 1)) {
-    console.log("här borde vi sluta")
-  } else {
+    return
+  } else if (i >= 0) {
 
     const currentQuestion = formQuestions[i]
     const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
-    console.log(nextQuestion)
 
+    backButton.removeAttribute('hidden')
     currentQuestion.setAttribute('hidden', true)
-    nextQuestion.removeAttribute('hidden', false)
+    nextQuestion.removeAttribute('hidden')
 
-
-    index += 1
-
+    if (i === formQuestions.length - 2) {
+      nextButton.setAttribute('hidden', true)
+      resultButton.removeAttribute('hidden')
+    }
     console.log(index)
-
+    index += 1
+    console.log(index)
   }
+}
 
-  //tar in index och kollar vad det är? 
-  //lägga till 1 på indexet
+const showPrevQuestion = (i) => {
 
-  //ändra så index variabel blir det nya numret
+  if (i === 1) {
+    const currentQuestion = formQuestions[i]
+    const prevQuestion = formQuestions[(i - 1)]
 
-  //visa array-item med det indexet
+    backButton.setAttribute('hidden', true)
+    currentQuestion.setAttribute('hidden', true)
+    prevQuestion.removeAttribute('hidden')
+  }else if ()
 
-  //ändra attributet till hidden eller ta bort hidden 
+  index -= 1
 
 }
 
 
 nextButton.addEventListener(('click'), () => {
   showNextQuestion(index)
+})
+
+backButton.addEventListener(('click'), () => {
+  showPrevQuestion(index)
 })
 

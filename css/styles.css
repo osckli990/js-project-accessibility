@@ -5,6 +5,11 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .skip-link {
   position: absolute;
@@ -73,12 +78,25 @@ li {
 
 main {
   background-color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
 }
 
 #introduction {
-  margin: 5%;
+  margin-top: -4px;
   padding: 20px;
-  background-color: lightgrey;
+  background-color: #121934;
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+
+
 }
 
 #introduction h2,
@@ -88,16 +106,16 @@ main {
 
 .start-quiz {
   display: flex;
-  justify-content: center;
-  margin: 10px;
+  justify-content: flex-start;
+  margin: 10px 10px 10px 0;
 }
 
 .start-quiz-button {
   font-size: 18px;
-  padding: 5px;
+  padding: 8px;
   border-radius: 10px;
   border: none;
-  box-shadow: 0 0 5px 5px #1a2d6f;
+
 
 }
 
@@ -109,5 +127,4 @@ main {
 
 #footer {
   background-color: #1a2d6f;
-  bottom: 0;
 }

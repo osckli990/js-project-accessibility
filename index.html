@@ -87,28 +87,36 @@
             Importance of image accessebility 1
           </legend>
           <p>Which of the following is importat for web accessebility?</p>
-          <label for="id">Using only images for text content</label>
-          <input
-            id="id"
-            name="question-1"
-            value=""
-            type="radio"
-          >
-          <label for="id">Ensuring that all images have discriptive alt-text</label>
-          <input
-            id="id"
-            name="question-1"
-            value=""
-            type="radio"
-          >
-          <label for="id">Avoiding keyboard shortcuts</label>
-          <input
-            id="id"
-            name="question-1"
-            value=""
-            type="radio"
-          >
 
+          <span>
+            <input
+              id="answer-1-1"
+              name="question-1"
+              value="image-accessibility"
+              type="radio"
+            >
+            <label for="answer-1-1">Using only images for text content</label>
+          </span>
+
+          <span>
+            <input
+              id="answer-1-2"
+              name="question-1"
+              value="image-accessibility"
+              type="radio"
+            >
+            <label for="answer-1-2">Ensuring that all images have discriptive alt-text</label>
+          </span>
+
+          <span>
+            <input
+              id="answer-1-3"
+              name="question-1"
+              value="image-accessibility"
+              type="radio"
+            >
+            <label for="answer-1-3">Avoiding keyboard shortcuts</label>
+          </span>
         </fieldset>
 
         <fieldset
@@ -120,28 +128,35 @@
             Understanding WCAG 2
           </legend>
           <p>What does WCAG stand for?</p>
-          <label for="id">Web Content Accessebility Guidlines</label>
-          <input
-            id="id"
-            name="question-2"
-            value=""
-            type="radio"
-          >
-          <label for="id">Web Code Accessebility Group</label>
-          <input
-            id="id"
-            name="question-2"
-            value=""
-            type="radio"
-          >
-          <label for="id">Website Creation & Accessebility Guide</label>
-          <input
-            id="id"
-            name="question-2"
-            value=""
-            type="radio"
-          >
+          <span>
+            <input
+              id="question-2-1"
+              name="question-2"
+              value="WCAG"
+              type="radio"
+            >
+            <label for="id">Web Content Accessebility Guidlines</label>
+          </span>
 
+          <span>
+            <input
+              id="question-2-2"
+              name="question-2"
+              value="WCAG"
+              type="radio"
+            >
+            <label for="id">Web Code Accessebility Group</label>
+          </span>
+
+          <span>
+            <input
+              id="question-2-3"
+              name="question-2"
+              value="WCAG"
+              type="radio"
+            >
+            <label for="id">Website Creation and Accessebility Guide</label>
+          </span>
         </fieldset>
 
         <fieldset
@@ -153,27 +168,37 @@
             Cognitive disability 3
           </legend>
           <p>Which of these practices help users with cognitive disability?</p>
-          <label for="id">Using clear and simple language</label>
-          <input
-            id="id"
-            name="question-3"
-            value=""
-            type="radio"
-          >
-          <label for="id">Making websites only accessible with a mouse</label>
-          <input
-            id="id"
-            name="question-3"
-            value=""
-            type="radio"
-          >
-          <label for="id">Using complex forms with multiple steps</label>
-          <input
-            id="id"
-            name="question-3"
-            value=""
-            type="radio"
-          >
+
+          <span>
+            <input
+              id="question-3-1"
+              name="question-3"
+              value="cognitive-disablity"
+              type="radio"
+            >
+            <label for="id">Using clear and simple language</label>
+          </span>
+
+          <span>
+            <input
+              id="question-3-2"
+              name="question-3"
+              value="cognitive-disablity"
+              type="radio"
+            >
+            <label for="id">Making websites only accessible with a mouse</label>
+          </span>
+
+          <span>
+            <input
+              id="question-3-3"
+              name="question-3"
+              value="cognitive-disability"
+              type="radio"
+            >
+            <label for="id">Using complex forms with multiple steps</label>
+          </span>
+
         </fieldset>
 
         <fieldset
@@ -185,51 +210,69 @@
             Color and Contrast for Accessibility 4
           </legend>
           <p>What should you consider when using color in web design for accessibility?</p>
-          <label for="id">Colors should be used only for decoration</label>
-          <input
-            id="id"
-            name="question-4"
-            value=""
-            type="radio"
-          >
-          <label for="id">Ensure that there is enough contrast between text and background</label>
-          <input
-            id="id"
-            name="question-4"
-            value=""
-            type="radio"
-          >
-          <label for="id">Avoid any use of color altogether</label>
-          <input
-            id="id"
-            name="question-4"
-            value=""
-            type="radio"
-          >
+
+          <span>
+            <input
+              id="question-4-1"
+              name="question-4"
+              value="color-accessibility"
+              type="radio"
+            >
+            <label for="id">Colors should be used only for decoration</label>
+          </span>
+
+          <span>
+            <input
+              id="question-4-2"
+              name="question-4"
+              value="color-accessibility"
+              type="radio"
+            >
+            <label for="id">Ensure that there is enough contrast between text and background</label>
+          </span>
+
+          <span>
+            <input
+              id="question-4-3"
+              name="question-4"
+              value="color-accessibility"
+              type="radio"
+            >
+            <label for="id">Avoid any use of color altogether</label>
+          </span>
+
         </fieldset>
 
       </form>
+      <div class="button-container">
+        <!-- Change the names on these divs later on -->
+        <div class="forward-back">
+          <button
+            id="back-button"
+            type="button"
+            class="quiz-buttons"
+            hidden="true"
+          >
+            Back
+          </button>
 
-      <button
-        id="back-button"
-        type="button"
-        class="quiz-buttons"
-        hidden="true"
-      >Back</button>
-
-      <button
-        id="next-button"
-        type="button"
-        class="quiz-buttons"
-      >Next</button>
-
-      <button
-        id="result-button"
-        type="button"
-        class="quiz-buttons"
-        hidden="true"
-      >See Result</button>
-
+          <button
+            id="next-button"
+            type="button"
+            class="quiz-buttons"
+          >
+            Next
+          </button>
+        </div>
+        <button
+          id="result-button"
+          type="button"
+          class="quiz-buttons"
+          hidden="true"
+        >
+          See Result
+        </button>
+      </div>
     </section>
 
   </main>

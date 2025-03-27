@@ -30,8 +30,8 @@ body {
 }
 
 #header {
-  background-color: #1a2d6f;
-  color: white;
+  background-color: #1d2e42;
+  color: #e5d4c0;
   display: flex;
   height: 100px;
 }
@@ -63,7 +63,7 @@ li {
 
 .nav-links {
   text-decoration: none;
-  color: white;
+  color: #e5d4c0;
 }
 
 #banner {
@@ -78,7 +78,7 @@ li {
 }
 
 main {
-  background-color: white;
+  background-color: #e5d4c0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -123,23 +123,112 @@ main {
 
 /* Ta bort display none sen  */
 #quiz-section {
-
   display: block;
+  margin: 5px;
+  color: #1d2e42;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+legend {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
 }
 
 .form-questions {
+  font-size: 16px;
+  flex: 1;
   flex-direction: column;
+  height: 200px;
+  padding: 15px;
+  /*display: flex;*/
+  border-radius: 10px;
+  transform: translateX(100%);
+  opacity: 0;
+  display: none;
+  border: 2px solid #1d2e42;
 }
 
+.form-questions:not([hidden]) {
+  opacity: 1;
+  transform: translateX(0);
+  display: flex;
+}
 
+.slide-in-right {
+  animation: slideInRight 0.25s linear;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+
+}
+
+.slide-out-left {
+  animation: slideOutRight 0.25s linear;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+span {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 5px;
+  margin: 5px 0;
+  border: 2px solid #1d2e42;
+  border-radius: 10px;
+  background-color: #1d2e42;
+  color: #e5d4c0;
+
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0;
+}
+
+.forward-back {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz-buttons {
+  width: 70px;
+  height: 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 7px;
+  color: #1d2e42;
+
+}
 
 #footer {
-  background-color: #1a2d6f;
+  background-color: #1d2e42;
   height: 100px;
   display: flex;
   flex-direction: row;

@@ -14,18 +14,29 @@ let index = 0;
 //function that ensures the right buttons and questions are showing at the right time
 const showNextQuestion = (i) => {
 
-
-
   if (i >= (formQuestions.length - 1)) {
     return
   } else if (i >= 0) {
 
     const currentQuestion = formQuestions[i]
     const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
+    if (i > 0) {
+      const prevQuestion = formQuestions[(i - 1) % formQuestions.length]
+      currentQuestion.classList.add('slide-out-left')
+    }
+
+    nextQuestion.classList.add('slide-in-right')
+    console.log(nextQuestion)
+
+
 
     backButton.removeAttribute('hidden')
-    currentQuestion.setAttribute('hidden', true)
     nextQuestion.removeAttribute('hidden')
+
+    setTimeout(() => {
+      currentQuestion.setAttribute('hidden', true)
+    }, 500)
+
 
     if (i === formQuestions.length - 2) {
       nextButton.setAttribute('hidden', true)

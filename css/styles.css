@@ -76,7 +76,7 @@ li {
 
 #banner {
   height: auto;
-
+  display: none;
 }
 
 #banner img {
@@ -107,8 +107,8 @@ main {
   padding: 10px;
   color: white;
   flex: 1;
-  /* display: none; */
-  display: flex;
+  display: none;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -154,7 +154,11 @@ main {
   display: block;
   margin: 5px;
   color: #1d2e42;
-  display: none;
+  /* display: none; */
+}
+
+#quiz-head {
+  padding-bottom: 10px;
 }
 
 form {
@@ -174,18 +178,27 @@ legend {
 }
 
 .form-questions {
-  font-size: 16px;
+  /* font-size: 16px; */
   flex: 1;
   flex-direction: column;
 
-  padding: 15px;
+  padding: 0 10px;
   /*display: flex;*/
   border-radius: 10px;
   transform: translateX(100%);
   opacity: 0;
   display: none;
   border: 2px solid #1d2e42;
+  min-height: 310px;
 }
+
+.form-questions p {
+  font-size: 18px;
+  padding: 5px 0;
+}
+
+
+
 
 .form-questions:not([hidden]) {
   opacity: 1;
@@ -261,34 +274,39 @@ span {
   border: 2px solid #1d2e42;
   border-radius: 10px;
   background-color: #1d2e42;
-  color: #e5d4c0;
+  color: #efe8e0;
+  font-size: 18px;
 
 }
 
 .button-container {
   display: flex;
-  flex-direction: column;
-  margin: 5% 0;
+  margin-top: 5px;
+  justify-content: space-between;
+
 }
 
-.forward-back {
-  display: flex;
-  justify-content: space-between;
+#back-button[hidden] {
+  visibility: hidden;
+  display: block;
+  /* Don't delete!! This is so that the next-button stays to the right when backbutton is not visable */
 }
 
 .quiz-buttons {
-  width: 70px;
+  width: 90px;
   height: 40px;
   font-size: 18px;
   border: none;
   border-radius: 7px;
-  color: #1d2e42;
+  background-color: #0f3a6a;
+  color: #efe8e0;
+  box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
 
 }
 
 #footer {
   background-color: #1d2e42;
-  height: 65px;
+  height: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -23,10 +23,17 @@ body {
 
 .skip-link:focus {
   top: 0;
-  outline: 3px solid black;
+  outline: 3px solid yellow;
   outline-offset: 2px;
   border-radius: 2px;
   text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid yellow;
+  outline-offset: 2px;
+  border: 2px solid red !important;
+  border-radius: 2px;
 }
 
 #header {
@@ -148,7 +155,7 @@ legend {
   font-size: 16px;
   flex: 1;
   flex-direction: column;
-  height: 200px;
+
   padding: 15px;
   /*display: flex;*/
   border-radius: 10px;
@@ -180,7 +187,7 @@ legend {
 }
 
 .slide-out-left {
-  animation: slideOutRight 0.25s linear;
+  animation: slideOutLeft 0.25s linear;
 }
 
 @keyframes slideOutLeft {
@@ -190,6 +197,36 @@ legend {
 
   to {
     transform: translateX(-100%);
+  }
+}
+
+
+.slide-in-left {
+  animation: slideInLeft 0.25s linear;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.25s linear;
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
   }
 }
 

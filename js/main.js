@@ -20,6 +20,7 @@ const showNextQuestion = (i) => {
 
     const currentQuestion = formQuestions[i]
     const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
+
     if (i > 0) {
       const prevQuestion = formQuestions[(i - 1) % formQuestions.length]
       currentQuestion.classList.add('slide-out-left')
@@ -32,10 +33,7 @@ const showNextQuestion = (i) => {
 
     backButton.removeAttribute('hidden')
     nextQuestion.removeAttribute('hidden')
-
-    setTimeout(() => {
-      currentQuestion.setAttribute('hidden', true)
-    }, 500)
+    currentQuestion.setAttribute('hidden', true)
 
 
     if (i === formQuestions.length - 2) {
@@ -54,6 +52,11 @@ const showPrevQuestion = (i) => {
   if (i >= 1) {
     const currentQuestion = formQuestions[i]
     const prevQuestion = formQuestions[(i - 1) % formQuestions.length]
+
+    const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
+
+    nextQuestion.classList.add('slide-out-right')
+    prevQuestion.classList.add('slide-in-left')
 
     currentQuestion.setAttribute('hidden', true)
     prevQuestion.removeAttribute('hidden')

@@ -71,6 +71,7 @@ li {
 .nav-links {
   text-decoration: none;
   color: #e5d4c0;
+  font-size: 16px;
 }
 
 #banner {
@@ -82,6 +83,7 @@ li {
   width: 100%;
   object-fit: cover;
   height: auto;
+  max-height: 250px;
 }
 
 main {
@@ -89,14 +91,20 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 
 }
 
 /*Här gör vi disply flex för att styla introduction*/
 #introduction {
   margin-top: -4px;
-  padding: 20px;
-  background-color: #121934;
+  padding: 10px;
   color: white;
   flex: 1;
   /* display: none; */
@@ -104,27 +112,39 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: start;
+  max-width: 446px;
+  background-color: #e8dbcc;
 
 
 }
 
 #introduction h2,
 #introduction p {
-  padding: 5px;
+  padding: 7px;
+  color: #1d2e42;
+}
+
+#introduction p {
+  font-size: 18px;
+  text-align: center;
 }
 
 .start-quiz {
   display: flex;
   justify-content: flex-start;
   margin: 10px 10px 10px 0;
+
 }
 
 .start-quiz-button {
   font-size: 18px;
+  font-weight: 500;
   padding: 8px;
   border-radius: 10px;
   border: none;
+  background-color: #1d2e42;
+  color: #e5d4c0;
+  box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
 
 
 }
@@ -268,9 +288,13 @@ span {
 
 #footer {
   background-color: #1d2e42;
-  height: 100px;
+  height: 65px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.footer-content {
+  padding: 0 10px;
 }

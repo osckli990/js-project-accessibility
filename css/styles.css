@@ -75,7 +75,7 @@ li {
 
 #banner {
   height: auto;
-  display: none;
+
 }
 
 #banner img {
@@ -92,14 +92,15 @@ main {
 
 }
 
+/*Här gör vi disply flex för att styla introduction*/
 #introduction {
   margin-top: -4px;
   padding: 20px;
   background-color: #121934;
   color: white;
   flex: 1;
-  display: none;
-  /*display: flex*/
+  /* display: none; */
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -133,6 +134,7 @@ main {
   display: block;
   margin: 5px;
   color: #1d2e42;
+  display: none;
 }
 
 form {

@@ -2,7 +2,7 @@ const formQuestions = Array.from(document.getElementsByClassName('form-questions
 const nextButton = document.getElementById('next-button')
 const backButton = document.getElementById('back-button')
 const resultButton = document.getElementById('result-button')
-
+const resultsPage = document.getElementById('results')
 
 console.log(formQuestions)
 
@@ -75,6 +75,74 @@ const showPrevQuestion = (i) => {
   console.log(index)
 }
 
+const countScore = () => {
+  let points = document.querySelectorAll('input[value="true"]:checked')
+  console.log("here is:", points)
+  return points.length
+
+}
+
+const wrongQuestions = () => {
+  let questions = document.querySelectorAll('input[value="false"]:checked')
+  let question = []
+  //let falseQuestions = questions.closest(':not(span)').data('id')
+  //let falseQuestions = questions.parentElement
+
+  let falseQuestions = []
+  questions.forEach(question => {
+    falseQuestions.push(question.parentElement.parentElement.id)
+  })
+
+  for (i = 0; falseQuestions[i]; i++) {
+    question[i] = `question ${i + 1}`
+  }
+  console.log(question)
+  return question
+}
+
+
+const showResults = (i) => {
+  const score = document.getElementById('score')
+  const flunked = document.getElementById('flunked')
+  const resultsMessage = document.getElementById('results-message')
+  const currentQuestion = formQuestions[i]
+  const pointTotal = 4
+  let points = countScore()
+  let questions = wrongQuestions()
+
+  currentQuestion.classList.add('slide-out-left')
+  resultsPage.classList.add('slide-in-right')
+
+  backButton.setAttribute('hidden', true)
+  nextButton.setAttribute('hidden', true)
+  resultButton.setAttribute('hidden', true)
+  currentQuestion.setAttribute('hidden', true)
+  resultsPage.removeAttribute('hidden')
+
+  if (points < pointTotal) {
+    //flunked.innerHTML = `Questions you got wrong are: ${questions.forEach(q => {
+    //  `${q}`
+    //})}`
+    flunked.innerHTML = `Questions you got wrong are: ${questions.map(q => { q })}`
+  } else {
+    flunked.innerHTML = ''
+  }
+
+  score.innerHTML = `Your score is ${points}/${pointTotal}`
+
+  if (points === 0) {
+    resultsMessage.innerHTML = 'Yikes...'
+  } else if (points === 1) {
+    resultsMessage.innerHTML = 'det här säger sig självt'
+  } else if (points === 2) {
+    resultsMessage.innerHTML = 'wow. hälften'
+  } else if (points === 3) {
+    resultsMessage.innerHTML = 'nära skjuter ingen hare'
+  } else if (points === pointTotal) {
+    resultsMessage.innerHTML = 'Winner, winner chicken dinner'
+  }
+}
+
 
 nextButton.addEventListener(('click'), () => {
   showNextQuestion(index)
@@ -84,3 +152,6 @@ backButton.addEventListener(('click'), () => {
   showPrevQuestion(index)
 })
 
+resultButton.addEventListener(('click'), () => {
+  showResults(index)
+})

@@ -177,7 +177,8 @@ legend {
   text-align: center;
 }
 
-.form-questions {
+.form-questions,
+.form-result {
   /* font-size: 16px; */
   flex: 1;
   flex-direction: column;
@@ -192,7 +193,8 @@ legend {
   min-height: 310px;
 }
 
-.form-questions p {
+.form-questions,
+.form-result p {
   font-size: 18px;
   padding: 5px 0;
 }
@@ -200,7 +202,8 @@ legend {
 
 
 
-.form-questions:not([hidden]) {
+.form-questions:not([hidden]),
+.form-result:not([hidden]) {
   opacity: 1;
   transform: translateX(0);
   display: flex;

@@ -92,9 +92,9 @@
 
             <span>
               <input
-                id="answer-1-1"
+                id="question-1-1"
                 name="question-1"
-                value="image-accessibility"
+                value="true"
                 type="radio"
               >
               <label for="answer-1-1">Using only images for text content</label>
@@ -102,19 +102,19 @@
 
             <span>
               <input
-                id="answer-1-2"
+                id="question-1-2"
                 name="question-1"
-                value="image-accessibility"
+                value="false"
                 type="radio"
               >
-              <label for="answer-1-2">Ensuring that all images have discriptive alt-text</label>
+              <label for="answer-1-2">Ensuring that all important images have discriptive alt-text</label>
             </span>
 
             <span>
               <input
-                id="answer-1-3"
+                id="question-1-3"
                 name="question-1"
-                value="image-accessibility"
+                value="false"
                 type="radio"
               >
               <label for="answer-1-3">Avoiding keyboard shortcuts</label>
@@ -134,8 +134,8 @@
             <span>
               <input
                 id="question-2-1"
-                name="question-2"
-                value="WCAG"
+                name="WCAG"
+                value="true"
                 type="radio"
               >
               <label for="id">Web Content Accessebility Guidlines</label>
@@ -144,8 +144,8 @@
             <span>
               <input
                 id="question-2-2"
-                name="question-2"
-                value="WCAG"
+                name="WCAG"
+                value="false"
                 type="radio"
               >
               <label for="id">Web Code Accessebility Group</label>
@@ -154,8 +154,8 @@
             <span>
               <input
                 id="question-2-3"
-                name="question-2"
-                value="WCAG"
+                name="WCAG"
+                value="false"
                 type="radio"
               >
               <label for="id">Website Creation and Accessebility Guide</label>
@@ -176,8 +176,8 @@
             <span>
               <input
                 id="question-3-1"
-                name="question-3"
-                value="cognitive-disablity"
+                name="cognitive-disability"
+                value="true"
                 type="radio"
               >
               <label for="id">Using clear and simple language</label>
@@ -186,8 +186,8 @@
             <span>
               <input
                 id="question-3-2"
-                name="question-3"
-                value="cognitive-disablity"
+                name="cognitive-disability"
+                value="false"
                 type="radio"
               >
               <label for="id">Making websites only accessible with a mouse</label>
@@ -196,8 +196,8 @@
             <span>
               <input
                 id="question-3-3"
-                name="question-3"
-                value="cognitive-disability"
+                name="cognitive-disability"
+                value="false"
                 type="radio"
               >
               <label for="id">Using complex forms with multiple steps</label>
@@ -219,8 +219,8 @@
             <span>
               <input
                 id="question-4-1"
-                name="question-4"
-                value="color-accessibility"
+                name="color-accessibility"
+                value="false"
                 type="radio"
               >
               <label for="id">Colors should be used only for decoration</label>
@@ -229,8 +229,8 @@
             <span>
               <input
                 id="question-4-2"
-                name="question-4"
-                value="color-accessibility"
+                name="color-accessibility"
+                value="true"
                 type="radio"
               >
               <label for="id">Ensure that there is enough contrast between text and background</label>
@@ -239,13 +239,31 @@
             <span>
               <input
                 id="question-4-3"
-                name="question-4"
-                value="color-accessibility"
+                name="color-accessibility"
+                value="false"
                 type="radio"
               >
               <label for="id">Avoid any use of color altogether</label>
             </span>
 
+          </fieldset>
+
+          <fieldset
+            id="results"
+            class="form-result"
+            hidden="true"
+          >
+            <legend>
+              Results!
+            </legend>
+            <img
+              src=""
+              alt="motivational image"
+              role="img"
+            />
+            <h3 id="score">Your score is -/-</h3>
+            <h2 id="flunked">Questions you got wrong are: -</h2>
+            <p id="results-message">We hope you learned from this experiance</p>
           </fieldset>
 
         </form>

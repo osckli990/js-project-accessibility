@@ -123,7 +123,9 @@ const showResults = (i) => {
     //flunked.innerHTML = `Questions you got wrong are: ${questions.forEach(q => {
     //  `${q}`
     //})}`
-    flunked.innerHTML = `Questions you got wrong are: ${questions.map(q => { q })}`
+    flunked.innerHTML = `Questions you got wrong are: ${questions.map(q => {
+      return q
+    }).join(", ")}`
   } else {
     flunked.innerHTML = ''
   }

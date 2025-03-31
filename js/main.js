@@ -184,6 +184,7 @@ backButton.addEventListener(('click'), () => {
   showPrevQuestion(index)
 })
 
-resultButton.addEventListener(('click'), () => {
+resultButton.addEventListener(('click'), (event) => {
+  event.preventDefault()
   showResults(index)
 })

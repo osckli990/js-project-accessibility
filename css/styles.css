@@ -237,9 +237,6 @@ legend {
   padding: 5px 0;
 }
 
-
-
-
 .form-questions:not([hidden]),
 .form-result:not([hidden]) {
   opacity: 1;
@@ -333,6 +330,11 @@ legend {
   /* Don't delete!! This is so that the next-button stays to the right when backbutton is not visable */
 }
 
+#retake-button[hidden] {
+  visibility: hidden;
+  display: block;
+}
+
 .quiz-buttons {
   width: 90px;
   height: 40px;
@@ -342,6 +344,7 @@ legend {
   background-color: #0f3a6a;
   color: #efe8e0;
   box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
+  text-align: center;
 
 }
 

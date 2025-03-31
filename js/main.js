@@ -2,9 +2,13 @@ const formQuestions = Array.from(document.getElementsByClassName('form-questions
 const nextButton = document.getElementById('next-button')
 const backButton = document.getElementById('back-button')
 const resultButton = document.getElementById('result-button')
+const retakeButton = document.getElementById('retake-button')
+
 const resultsPage = document.getElementById('results')
+
 const bar = document.getElementById('bar')
 const percent = document.getElementById('percent-bar')
+
 
 console.log(formQuestions)
 
@@ -30,8 +34,6 @@ const showNextQuestion = (i) => {
 
     nextQuestion.classList.add('slide-in-right')
     console.log(nextQuestion)
-
-
 
     backButton.removeAttribute('hidden')
     nextQuestion.removeAttribute('hidden')
@@ -121,6 +123,7 @@ const showResults = (i) => {
   resultButton.setAttribute('hidden', true)
   currentQuestion.setAttribute('hidden', true)
   resultsPage.removeAttribute('hidden')
+  retakeButton.removeAttribute('hidden')
 
   if (points < pointTotal) {
     //flunked.innerHTML = `Questions you got wrong are: ${questions.forEach(q => {
@@ -188,3 +191,5 @@ resultButton.addEventListener(('click'), (event) => {
   event.preventDefault()
   showResults(index)
 })
+
+//eventlistener där vi för "Retake quiz" knappen där vi ser till att den laddar om från quizet, inte introduction. 

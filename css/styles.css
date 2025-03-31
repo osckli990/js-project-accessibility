@@ -321,7 +321,6 @@ legend {
   display: flex;
   margin-top: 5px;
   justify-content: space-between;
-
 }
 
 #back-button[hidden] {
@@ -332,7 +331,7 @@ legend {
 
 #retake-button[hidden] {
   visibility: hidden;
-  display: block;
+
 }
 
 .quiz-buttons {
@@ -345,7 +344,6 @@ legend {
   color: #efe8e0;
   box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
   text-align: center;
-
 }
 
 #footer {

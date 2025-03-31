@@ -179,7 +179,7 @@ main {
 .bar {
   height: 10px;
   border-radius: 5px;
-  width: 10%;
+  width: 7%;
   background: rgb(59, 59, 227);
   display: flex;
   justify-content: flex-end;

@@ -151,7 +151,7 @@ const moveBar = (i) => {
 
   switch (i) {
     case 0:
-      bar.style.width = "10%"
+      bar.style.width = "7%"
       break
     case 1:
       bar.style.width = "25%"
@@ -166,7 +166,7 @@ const moveBar = (i) => {
       bar.style.width = "100%"
       break
     default:
-      bar.style.width = "10%"
+      bar.style.width = "7%"
       break
   }
 }

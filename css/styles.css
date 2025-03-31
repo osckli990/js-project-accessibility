@@ -98,8 +98,22 @@ main {
   justify-content: center;
   align-items: center;
   flex: 1;
+  height: 100%;
 
 }
+
+/*About*/
+#about {}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
 
 /*Här gör vi disply flex för att styla introduction*/
 #introduction {

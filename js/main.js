@@ -23,19 +23,12 @@ const showNextQuestion = (i) => {
     const currentQuestion = formQuestions[i]
     const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
 
-    if (i > 0) {
-      const prevQuestion = formQuestions[(i - 1) % formQuestions.length]
-      currentQuestion.classList.add('slide-out-left')
-    }
-
-    nextQuestion.classList.add('slide-in-right')
-    console.log(nextQuestion)
-
+    currentQuestion.classList.add('slide-out-left')
+    nextQuestion.classList.add('slide-in-left')
+    // moveSmooth(currentQuestion, nextQuestion)
 
 
     backButton.removeAttribute('hidden')
-    nextQuestion.removeAttribute('hidden')
-    currentQuestion.setAttribute('hidden', true)
 
 
     if (i === formQuestions.length - 2) {
@@ -49,6 +42,11 @@ const showNextQuestion = (i) => {
   }
 }
 
+// const moveSmooth = (element, element2) => {
+//   element.style = "transform: translateX(-100%)"
+//   element2.style = "transform: translateX(-100%)"
+// }
+
 const showPrevQuestion = (i) => {
 
 
@@ -58,11 +56,10 @@ const showPrevQuestion = (i) => {
 
     const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
 
-    nextQuestion.classList.add('slide-out-right')
-    prevQuestion.classList.add('slide-in-left')
+    currentQuestion.classList.toggle('slide-out-right')
+    prevQuestion.classList.toggle('slide-in')
 
-    currentQuestion.setAttribute('hidden', true)
-    prevQuestion.removeAttribute('hidden')
+
 
     if (i === formQuestions.length - 1) {
       resultButton.setAttribute('hidden', true)
@@ -113,14 +110,12 @@ const showResults = (i) => {
   let points = countScore()
   let questions = wrongQuestions()
 
-  currentQuestion.classList.add('slide-out-left')
-  resultsPage.classList.add('slide-in-right')
+  currentQuestion.classList.toggle('displayed')
+  resultsPage.classList.toggle('displayed')
 
   backButton.setAttribute('hidden', true)
   nextButton.setAttribute('hidden', true)
   resultButton.setAttribute('hidden', true)
-  currentQuestion.setAttribute('hidden', true)
-  resultsPage.removeAttribute('hidden')
 
   if (points < pointTotal) {
     //flunked.innerHTML = `Questions you got wrong are: ${questions.forEach(q => {

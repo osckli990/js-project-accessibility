@@ -219,15 +219,15 @@ legend {
   /* font-size: 16px; */
   flex: 1;
   flex-direction: column;
-
   padding: 0 7px;
-  /*display: flex;*/
   border-radius: 10px;
-  transform: translateX(100%);
-  opacity: 0;
-  display: none;
+  width: 100%;
+  display: flex;
   border: 2px solid #1d2e42;
   min-height: 310px;
+  min-width: 100%;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out;
 }
 
 /*här stod det tidigare bara .form-questions istället för .form-questions p. Vet inte varför men det gjorde att paddingen i den ovanför inte funkade så ändrade det*/
@@ -237,19 +237,37 @@ legend {
   padding: 5px 0;
 }
 
+.form-questions.displayed {
+  display: flex;
+}
 
-
-
-.form-questions:not([hidden]),
-.form-result:not([hidden]) {
-  opacity: 1;
-  transform: translateX(0);
+.form-result.displayed {
   display: flex;
 }
 
 .slide-in-right {
-  animation: slideInRight 0.25s linear;
+  transform: translateX(100%);
 }
+
+.slide-in-left {
+  transform: translateX(-100%);
+}
+
+.slide-out-left {
+  transform: translateX(-100%);
+}
+
+.slide-out-right {
+  transform: translateX(100%);
+}
+
+/*
+.slide-in-right {
+  animation: slideInRight 0.25s linear;
+  animation-fill-mode: forwards;
+  display: flex;
+}
+
 
 @keyframes slideInRight {
   from {
@@ -264,6 +282,7 @@ legend {
 
 .slide-out-left {
   animation: slideOutLeft 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes slideOutLeft {
@@ -273,12 +292,15 @@ legend {
 
   to {
     transform: translateX(-100%);
+    display: none;
+
   }
 }
 
 
 .slide-in-left {
   animation: slideInLeft 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes slideInLeft {
@@ -288,12 +310,14 @@ legend {
 
   to {
     transform: translateX(0);
+    display: flex;
   }
 
 }
 
 .slide-out-right {
   animation: slideOutRight 0.25s linear;
+  animation-fill-mode: forwards;
 }
 
 @keyframes slideOutRight {
@@ -303,8 +327,10 @@ legend {
 
   to {
     transform: translateX(100%);
+    display: none;
   }
 }
+*/
 
 .answer-container {
   display: flex;
@@ -356,4 +382,8 @@ legend {
 
 .footer-content {
   padding: 0 10px;
+}
+
+@media (prefers-reduced-motion) {
+  /* styles to apply if a user's device settings are set to reduced motion */
 }

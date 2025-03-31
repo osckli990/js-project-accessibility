@@ -40,7 +40,7 @@ body {
   background-color: #1d2e42;
   color: #e5d4c0;
   display: flex;
-  height: 100px;
+  height: 80px;
 }
 
 .header-content {
@@ -161,6 +161,43 @@ main {
   padding-bottom: 10px;
 }
 
+/*progressbar*/
+.progress-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  background: white;
+  height: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.bar {
+  height: 10px;
+  border-radius: 5px;
+  width: 10%;
+  background: rgb(59, 59, 227);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.25s ease-in-out;
+}
+
+.bar span {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d2e42;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -183,7 +220,7 @@ legend {
   flex: 1;
   flex-direction: column;
 
-  padding: 0 10px;
+  padding: 0 7px;
   /*display: flex;*/
   border-radius: 10px;
   transform: translateX(100%);
@@ -193,7 +230,8 @@ legend {
   min-height: 310px;
 }
 
-.form-questions,
+/*här stod det tidigare bara .form-questions istället för .form-questions p. Vet inte varför men det gjorde att paddingen i den ovanför inte funkade så ändrade det*/
+.form-questions p,
 .form-result p {
   font-size: 18px;
   padding: 5px 0;
@@ -268,7 +306,7 @@ legend {
   }
 }
 
-span {
+.answer-container {
   display: flex;
   flex-direction: row;
   gap: 10px;

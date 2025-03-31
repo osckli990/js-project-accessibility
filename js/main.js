@@ -3,6 +3,8 @@ const nextButton = document.getElementById('next-button')
 const backButton = document.getElementById('back-button')
 const resultButton = document.getElementById('result-button')
 const resultsPage = document.getElementById('results')
+const bar = document.getElementById('bar')
+const percent = document.getElementById('percent-bar')
 
 console.log(formQuestions)
 
@@ -42,6 +44,7 @@ const showNextQuestion = (i) => {
     }
 
     index += 1
+    moveBar(index)
     console.log(index)
   }
 }
@@ -71,7 +74,7 @@ const showPrevQuestion = (i) => {
   }
 
   index -= 1
-
+  moveBar(index)
   console.log(index)
 }
 
@@ -141,7 +144,36 @@ const showResults = (i) => {
   } else if (points === pointTotal) {
     resultsMessage.innerHTML = 'Winner, winner chicken dinner'
   }
+  moveBar(4)
 }
+
+const moveBar = (i) => {
+
+  switch (i) {
+    case 0:
+      bar.style.width = "10%"
+      break
+    case 1:
+      bar.style.width = "25%"
+      break
+    case 2:
+      bar.style.width = "50%"
+      break
+    case 3:
+      bar.style.width = "75%"
+      break
+    case 4:
+      bar.style.width = "100%"
+      break
+    default:
+      bar.style.width = "10%"
+      break
+  }
+}
+
+
+
+
 
 
 nextButton.addEventListener(('click'), () => {

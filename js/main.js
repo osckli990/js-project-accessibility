@@ -11,7 +11,7 @@ const percent = document.getElementById('percent-bar')
 const startQuizButton = document.getElementById('intro-continue')
 
 //Sections
-const introSection = document.getElementById('introduction')
+const introSection = document.getElementById('introduction-section')
 const quizSection = document.getElementById('quiz-section')
 
 

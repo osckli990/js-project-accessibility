@@ -93,14 +93,7 @@ main {
   flex-direction: column;
 }
 
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  height: 100%;
 
-}
 
 /*About*/
 #about {
@@ -122,24 +115,27 @@ main {
 
 
 /*Här gör vi disply flex för att styla introduction*/
-#introduction {
+#introduction-section {
   margin-top: -4px;
   padding: 10px;
   color: white;
   max-width: 446px;
-  background-color: #e8dbcc;
+  
 
 }
 
-#introduction h2,
-#introduction p {
+#introduction-section h2,
+#introduction-section p {
   padding: 7px;
   color: #1d2e42;
 }
 
-#introduction p {
-  font-size: 18px;
+#introduction-section p {
+  font-size: 16px;
+}
 
+.introduction {
+  background-color: #e8dbcc;
 }
 
 .start-quiz {
@@ -177,9 +173,6 @@ main {
 /*progressbar*/
 .progress-bar-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .progress-bar {
@@ -246,7 +239,7 @@ legend {
 /*här stod det tidigare bara .form-questions istället för .form-questions p. Vet inte varför men det gjorde att paddingen i den ovanför inte funkade så ändrade det*/
 .form-questions p,
 .form-result p {
-  font-size: 18px;
+  font-size: 16px;
   padding: 5px 0;
 }
 
@@ -327,7 +320,7 @@ legend {
   border-radius: 10px;
   background-color: #1d2e42;
   color: #efe8e0;
-  font-size: 18px;
+  font-size: 16px;
 
 }
 

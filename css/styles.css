@@ -93,28 +93,14 @@ main {
   flex-direction: column;
 }
 
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-
-}
 
 /*Här gör vi disply flex för att styla introduction*/
 #introduction {
   margin-top: -4px;
   padding: 10px;
   color: white;
-  flex: 1;
-  display: none;
-  /* display: flex; */
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   max-width: 446px;
   background-color: #e8dbcc;
-
 
 }
 
@@ -126,12 +112,12 @@ main {
 
 #introduction p {
   font-size: 18px;
-  text-align: center;
+
 }
 
 .start-quiz {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 10px 10px 10px 0;
 
 }
@@ -151,10 +137,10 @@ main {
 
 /* Ta bort display none sen  */
 #quiz-section {
-  display: block;
+  /* display: block; */
   margin: 5px;
   color: #1d2e42;
-  /* display: none; */
+
 }
 
 #quiz-head {

@@ -17,7 +17,7 @@
 
 <body>
   <a
-    href="#main-content"
+    href="#intro-continue"
     class="skip-link"
   >Skip to main content</a>
   <header id="header">
@@ -59,264 +59,273 @@
         role="presentation"
       />
     </section>
-    <div class="main-content">
-      <section id="introduction">
-        <h2>Introduction</h2>
-        <p>Our quiz is accessible with clear text, high contrast, keyboard navigation, and alternative text for images.
-        </p>
-        <div class="start-quiz">
+
+    <section id="introduction">
+
+      <h2>Introduction</h2>
+      <p>Our quiz is accessible with clear text, high contrast, keyboard navigation, and alternative text for images.
+      </p>
+      <div class="start-quiz">
+
+        <button
+          id="intro-continue"
+          type="button"
+          class="start-quiz-button"
+        >
+          Start Quiz
+        </button>
+      </div>
+    </section>
+
+    <section
+      id="quiz-section"
+      hidden
+    >
+      <h2 id="quiz-head">
+        Accessibility Quiz
+      </h2>
+
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+          <div
+            class="bar"
+            id="bar"
+          ><span id="percent-bar"></span></div>
+        </div>
+      </div>
+
+      <form>
+        <fieldset >
+          <!-- ska vi göra att man fyller i namn här eller inte? -->
+        </fieldset>
+        <fieldset
+          id="question-one"
+          class="form-questions"
+        >
+          <legend>
+            Question 1
+          </legend>
+          <h3>Importance of image accessibility</h3>
+          <p>Which of the following is importat for web accessebility?</p>
+
+          <span class="answer-container">
+            <input
+              id="question-1-1"
+              name="question-1"
+              value="true"
+              type="radio"
+            >
+            <label for="question-1-1">Using only images for text content</label>
+          </span>
+
+          <span class="answer-container">
+            <input
+              id="question-1-2"
+              name="question-1"
+              value="false"
+              type="radio"
+            >
+            <label for="question-1-2">Ensuring that all important images have discriptive alt-text</label>
+          </span>
+
+          <span class="answer-container">
+            <input
+              id="question-1-3"
+              name="question-1"
+              value="false"
+              type="radio"
+            >
+            <label for="question-1-3">Avoiding keyboard shortcuts</label>
+          </span>
+        </fieldset>
+
+        <fieldset
+          id="question-two"
+          class="form-questions"
+          hidden
+        >
+          <legend>
+            Question 2
+          </legend>
+          <h3>Understanding WCAG</h3>
+          <p>What does WCAG stand for?</p>
+          <span class="answer-container">
+            <input
+              id="question-2-1"
+              name="WCAG"
+              value="true"
+              type="radio"
+            >
+            <label for="question-2-1">Web Content Accessebility Guidlines</label>
+          </span>
+
+          <span class="answer-container">
+            <input
+              id="question-2-2"
+              name="WCAG"
+              value="false"
+              type="radio"
+            >
+            <label for="question-2-2">Web Code Accessebility Group</label>
+          </span>
+
+          <span class="answer-container">
+            <input
+              id="question-2-3"
+              name="WCAG"
+              value="false"
+              type="radio"
+            >
+            <label for="question-2-3">Website Creation and Accessebility Guide</label>
+          </span>
+        </fieldset>
+
+        <fieldset
+          id="question-three"
+          class="form-questions"
+          hidden="true"
+        >
+          <legend>
+            Question 3
+          </legend>
+          <h3>Cognitive disability</h3>
+          <p>Which of these practices help users with cognitive disability?</p>
+
+          <span class="answer-container">
+            <input
+              id="question-3-1"
+              name="cognitive-disability"
+              value="true"
+              type="radio"
+            >
+            <label for="question-3-1">Using clear and simple language</label>
+          </span>
+
+          <span class="answer-container">
+            <input
+              id="question-3-2"
+              name="cognitive-disability"
+              value="false"
+              type="radio"
+            >
+            <label for="question-3-2">Making websites only accessible with a mouse</label>
+          </span>
+
+          <span class="answer-container">
+            <input
+              id="question-3-3"
+              name="cognitive-disability"
+              value="false"
+              type="radio"
+            >
+            <label for="question-3-3">Using complex forms with multiple steps</label>
+          </span>
+
+        </fieldset>
+
+        <fieldset
+          id="question-four"
+          class="form-questions"
+          hidden="true"
+        >
+          <legend>
+            Question 4
+          </legend>
+          <h3>Color and Contrast for Accessibility </h3>
+          <p>What should you consider when using color in web design for accessibility?</p>
+
+          <span class="answer-container">
+            <input
+              id="question-4-1"
+              name="color-accessibility"
+              value="false"
+              type="radio"
+            >
+            <label for="question-4-1">Colors should be used only for decoration</label>
+          </span>
+
+          <span class="answer-container">
+            <input
+              id="question-4-2"
+              name="color-accessibility"
+              value="true"
+              type="radio"
+            >
+            <label for="question-4-2">Ensure that there is enough contrast between text and background</label>
+          </span>
+
+          <span class="answer-container">
+            <input
+              id="question-4-3"
+              name="color-accessibility"
+              value="false"
+              type="radio"
+            >
+            <label for="question-4-3">Avoid any use of color altogether</label>
+          </span>
+
+        </fieldset>
+
+        <fieldset
+          id="results"
+          class="form-result"
+          hidden="true"
+        >
+          <legend>
+            Results!
+          </legend>
+          <img
+            src=""
+            alt="motivational image"
+            role="img"
+          />
+          <h3 id="score">Your score is -/-</h3>
+          <h2 id="flunked">Questions you got wrong are: -</h2>
+          <p id="results-message">We hope you learned from this experiance</p>
+        </fieldset>
+
+        <div class="button-container">
+          <!-- Change the names on these divs later on -->
+
           <button
-            id="intro-continue"
+            id="back-button"
             type="button"
-            class="start-quiz-button"
+            class="quiz-buttons"
+            hidden="true"
           >
-            Start Quiz
+            Back
+          </button>
+
+          <button
+            id="next-button"
+            type="button"
+            class="quiz-buttons"
+          >
+            Next
+          </button>
+
+          <input
+            id="result-button"
+            type="submit"
+            class="quiz-buttons"
+            hidden="true"
+            value="See Result"
+          />
+
+          <button
+            id="retake-button"
+            type="button"
+            class="quiz-buttons"
+            hidden="true"
+          >Retake quiz
+
           </button>
         </div>
-      </section>
+      </form>
 
-      <section id="quiz-section">
-        <h2 id="quiz-head">
-          Accessibility Quiz
-        </h2>
-        <div class="progress-bar-container">
-          <div class="progress-bar">
-            <div
-              class="bar"
-              id="bar"
-            ><span id="percent-bar"></span></div>
-          </div>
+    </section>
 
-        </div>
-        <form>
-          <fieldset
-            id="question-one"
-            class="form-questions"
-          >
-            <legend>
-              Question 1
-            </legend>
-            <h3>Importance of image accessibility</h3>
-            <p>Which of the following is importat for web accessebility?</p>
 
-            <span class="answer-container">
-              <input
-                id="question-1-1"
-                name="question-1"
-                value="true"
-                type="radio"
-              >
-              <label for="question-1-1">Using only images for text content</label>
-            </span>
-
-            <span class="answer-container">
-              <input
-                id="question-1-2"
-                name="question-1"
-                value="false"
-                type="radio"
-              >
-              <label for="question-1-2">Ensuring that all important images have discriptive alt-text</label>
-            </span>
-
-            <span class="answer-container">
-              <input
-                id="question-1-3"
-                name="question-1"
-                value="false"
-                type="radio"
-              >
-              <label for="question-1-3">Avoiding keyboard shortcuts</label>
-            </span>
-          </fieldset>
-
-          <fieldset
-            id="question-two"
-            class="form-questions"
-            hidden
-          >
-            <legend>
-              Question 2
-            </legend>
-            <h3>Understanding WCAG</h3>
-            <p>What does WCAG stand for?</p>
-            <span class="answer-container">
-              <input
-                id="question-2-1"
-                name="WCAG"
-                value="true"
-                type="radio"
-              >
-              <label for="question-2-1">Web Content Accessebility Guidlines</label>
-            </span>
-
-            <span class="answer-container">
-              <input
-                id="question-2-2"
-                name="WCAG"
-                value="false"
-                type="radio"
-              >
-              <label for="question-2-2">Web Code Accessebility Group</label>
-            </span>
-
-            <span class="answer-container">
-              <input
-                id="question-2-3"
-                name="WCAG"
-                value="false"
-                type="radio"
-              >
-              <label for="question-2-3">Website Creation and Accessebility Guide</label>
-            </span>
-          </fieldset>
-
-          <fieldset
-            id="question-three"
-            class="form-questions"
-            hidden="true"
-          >
-            <legend>
-              Question 3
-            </legend>
-            <h3>Cognitive disability</h3>
-            <p>Which of these practices help users with cognitive disability?</p>
-
-            <span class="answer-container">
-              <input
-                id="question-3-1"
-                name="cognitive-disability"
-                value="true"
-                type="radio"
-              >
-              <label for="question-3-1">Using clear and simple language</label>
-            </span>
-
-            <span class="answer-container">
-              <input
-                id="question-3-2"
-                name="cognitive-disability"
-                value="false"
-                type="radio"
-              >
-              <label for="question-3-2">Making websites only accessible with a mouse</label>
-            </span>
-
-            <span class="answer-container">
-              <input
-                id="question-3-3"
-                name="cognitive-disability"
-                value="false"
-                type="radio"
-              >
-              <label for="question-3-3">Using complex forms with multiple steps</label>
-            </span>
-
-          </fieldset>
-
-          <fieldset
-            id="question-four"
-            class="form-questions"
-            hidden="true"
-          >
-            <legend>
-              Question 4
-            </legend>
-            <h3>Color and Contrast for Accessibility </h3>
-            <p>What should you consider when using color in web design for accessibility?</p>
-
-            <span class="answer-container">
-              <input
-                id="question-4-1"
-                name="color-accessibility"
-                value="false"
-                type="radio"
-              >
-              <label for="question-4-1">Colors should be used only for decoration</label>
-            </span>
-
-            <span class="answer-container">
-              <input
-                id="question-4-2"
-                name="color-accessibility"
-                value="true"
-                type="radio"
-              >
-              <label for="question-4-2">Ensure that there is enough contrast between text and background</label>
-            </span>
-
-            <span class="answer-container">
-              <input
-                id="question-4-3"
-                name="color-accessibility"
-                value="false"
-                type="radio"
-              >
-              <label for="question-4-3">Avoid any use of color altogether</label>
-            </span>
-
-          </fieldset>
-
-          <fieldset
-            id="results"
-            class="form-result"
-            hidden="true"
-          >
-            <legend>
-              Results!
-            </legend>
-            <img
-              src=""
-              alt="motivational image"
-              role="img"
-            />
-            <h3 id="score">Your score is -/-</h3>
-            <h2 id="flunked">Questions you got wrong are: -</h2>
-            <p id="results-message">We hope you learned from this experiance</p>
-          </fieldset>
-
-          <div class="button-container">
-            <!-- Change the names on these divs later on -->
-
-            <button
-              id="back-button"
-              type="button"
-              class="quiz-buttons"
-              hidden="true"
-            >
-              Back
-            </button>
-
-            <button
-              id="next-button"
-              type="button"
-              class="quiz-buttons"
-            >
-              Next
-            </button>
-
-            <input
-              id="result-button"
-              type="submit"
-              class="quiz-buttons"
-              hidden="true"
-              value="See Result"
-            />
-
-            <button
-              id="retake-button"
-              type="button"
-              class="quiz-buttons"
-              hidden="true"
-            >Retake quiz
-
-            </button>
-          </div>
-        </form>
-
-      </section>
-
-    </div>
 
   </main>
 

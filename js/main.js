@@ -1,20 +1,29 @@
 const formQuestions = Array.from(document.getElementsByClassName('form-questions'))
+
+//Buttons
 const nextButton = document.getElementById('next-button')
 const backButton = document.getElementById('back-button')
 const resultButton = document.getElementById('result-button')
 const retakeButton = document.getElementById('retake-button')
-
 const resultsPage = document.getElementById('results')
-
 const bar = document.getElementById('bar')
 const percent = document.getElementById('percent-bar')
+const startQuizButton = document.getElementById('intro-continue')
+
+//Sections
+const introSection = document.getElementById('introduction')
+const quizSection = document.getElementById('quiz-section')
 
 
-console.log(formQuestions)
 
 
 let index = 0;
 
+startQuizButton.addEventListener('click', () => {
+  introSection.hidden = true
+  quizSection.hidden = false
+
+})
 
 
 //function that ensures the right buttons and questions are showing at the right time

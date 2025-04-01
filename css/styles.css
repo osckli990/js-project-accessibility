@@ -15,15 +15,15 @@ body {
   position: absolute;
   top: -40px;
   left: 0;
-  color: white;
+  color: black;
   padding: 8px;
   z-index: 100;
   transition: top 0.3s;
+  background-color: white;
 }
 
 .skip-link:focus {
   top: 0;
-  outline: 3px solid yellow;
   outline-offset: 2px;
   border-radius: 2px;
   text-decoration: none;
@@ -32,7 +32,6 @@ body {
 :focus-visible {
   outline: 2px solid yellow;
   outline-offset: 2px;
-  border: 2px solid red !important;
   border-radius: 2px;
 }
 
@@ -76,7 +75,6 @@ li {
 
 #banner {
   height: auto;
-  display: none;
 }
 
 #banner img {
@@ -88,9 +86,13 @@ li {
 
 main {
   background-color: #e5d4c0;
+  margin-top: -4px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0 20px 0;
 }
 
 
@@ -115,14 +117,16 @@ main {
 
 
 /*Här gör vi disply flex för att styla introduction*/
-#introduction-section {
+#introduction-section:not([hidden]) {
   margin-top: -4px;
   padding: 10px;
   color: white;
   max-width: 446px;
-  
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 #introduction-section h2,
 #introduction-section p {
@@ -138,29 +142,37 @@ main {
   background-color: #e8dbcc;
 }
 
-.start-quiz {
+.user-info:not([hidden]) {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #1d2e42;
+  width: 300px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-control input {
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 5px;
+  border: none;
+}
+
+
+.continue-container {
   display: flex;
   justify-content: center;
-  margin: 10px 10px 10px 0;
-
+  padding: 10px 0;
 }
 
-.start-quiz-button {
-  font-size: 18px;
-  font-weight: 500;
-  padding: 8px;
-  border-radius: 10px;
-  border: none;
-  background-color: #1d2e42;
-  color: #e5d4c0;
-  box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
 
 
-}
-
-/* Ta bort display none sen  */
-#quiz-section {
-  /* display: block; */
+#quiz-section:not([hidden]) {
+  display: block;
   margin: 5px;
   color: #1d2e42;
 
@@ -341,10 +353,12 @@ legend {
 
 }
 
-.quiz-buttons {
-  width: 90px;
-  height: 40px;
+.quiz-buttons,
+.intro-continue {
+  width: 100px;
+  height: 50px;
   font-size: 18px;
+  padding: 5px;
   border: none;
   border-radius: 7px;
   background-color: #0f3a6a;
@@ -364,4 +378,16 @@ legend {
 
 .footer-content {
   padding: 0 10px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

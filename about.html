@@ -18,6 +18,8 @@
   <a
     href="#main-content"
     class="skip-link"
+    aria-label="skip link"
+    aria-describedby="Link to skip ahead and start quiz section"
   >Skip to main content</a>
   <header id="header">
     <div class="header-content">
@@ -46,8 +48,23 @@
     </div>
   </header>
 
+  <section
+    id="banner"
+    role="banner"
+  >
+    <img
+      src="assets/hero.jpg"
+      alt=""
+      role="presentation"
+    />
+  </section>
+
   <main>
-    <section id="about">
+    <section
+      id="about"
+      role="feed"
+      aria-describedby="abous us section"
+    >
       <div class="about-us">
         <h2>About Us</h2>
         <p>
@@ -68,7 +85,7 @@
         <p>After two months on an air mattress, the quality of life has now increased by about 47%. This is
           since
           the furniture, including the bed, from the USA finally arrived. Better sleep = next level coding!</p>
-        <h3>Oscar "Oscar" Kling Liljefors</h3>
+        <h3>Oscar "Ogge" Kling Liljefors</h3>
 
         <p>Without a cat or a dog, Oscar works tirelessly in his search for the smoothest animations. Regardless
           of the time of day, but preferably in the evening or night. Preferably at night. Really preferably at
@@ -86,7 +103,7 @@
     id="footer"
     role="contentinfo"
   >
-    <div class="footer-content">
+    <nav class="footer-content" role="navigation" aria-label="footer menu">
       <ul>
         <li>
           <a
@@ -107,7 +124,7 @@
           >Contact Us</a>
         </li>
       </ul>
-    </div>
+    </nav>
   </footer>
 
   <script src="js/accordion.js"></script>

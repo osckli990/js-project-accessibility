@@ -8,20 +8,34 @@ const retakeButton = document.getElementById('retake-button')
 const resultsPage = document.getElementById('results')
 const bar = document.getElementById('bar')
 const percent = document.getElementById('percent-bar')
-const startQuizButton = document.getElementById('intro-continue')
+const continueToQuiz = document.getElementById('intro-continue')
+const startQuizButton = document.getElementById('start-quiz-button')
+const announcer = document.getElementById('announcer')
+
 
 //Sections
 const introSection = document.getElementById('introduction-section')
 const quizSection = document.getElementById('quiz-section')
+const userInfoSection = document.getElementById('user-info')
 
 
 
 
 let index = 0;
 
-startQuizButton.addEventListener('click', () => {
+continueToQuiz.addEventListener('click', () => {
+  announcer.textContent = 'Moved to user information section'
   introSection.hidden = true
   quizSection.hidden = false
+
+})
+
+startQuizButton.addEventListener('click', () => {
+  const quizQuestion = document.getElementById('question-one')
+  quizQuestion.hidden = false
+  nextButton.hidden = false
+  startQuizButton.hidden = true
+  userInfoSection.hidden = true
 
 })
 

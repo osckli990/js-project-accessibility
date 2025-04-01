@@ -103,13 +103,19 @@ main {
 }
 
 /*About*/
-#about {}
-
-.accordion-container {
+#about {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex: 1;
+}
+
+.about-us {
+  padding: 20px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
 
 }
 
@@ -212,8 +218,6 @@ legend {
   font-size: 18px;
   padding: 5px 0;
 }
-
-
 
 
 .form-questions:not([hidden]),

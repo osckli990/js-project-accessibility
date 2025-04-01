@@ -147,11 +147,17 @@ main {
   border-radius: 10px;
   border: 2px solid #1d2e42;
   width: 300px;
+  height: 300px; 
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%; 
+
+  
+
   
 }
 

@@ -16,12 +16,14 @@ const announcer = document.getElementById('announcer')
 const introSection = document.getElementById('introduction-section')
 const quizSection = document.getElementById('quiz-section')
 const userInfoSection = document.getElementById('user-info')
+const userInfoForm = document.getElementById('user-info-form');
+const quizForm = document.getElementById('quiz')
 
 
 
 
 // let index = 0;
-
+//When we click continue to quiz
 continueToQuiz.addEventListener('click', () => {
 
   introSection.hidden = true
@@ -31,8 +33,8 @@ continueToQuiz.addEventListener('click', () => {
   announcer.textContent = 'Moved to user information section';
 
 })
+//When we click start quiz
 
-const userInfoForm = document.getElementById('user-info-form');
 
 userInfoForm.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -41,6 +43,8 @@ userInfoForm.addEventListener('submit', (e) => {
   userInfoSection.hidden = true
 
 })
+
+
 
 
 //function that ensures the right buttons and questions are showing at the right time
@@ -180,7 +184,7 @@ const showResults = () => {
 //  showPrevQuestion(index)
 //})
 
-resultButton.addEventListener(('click'), (event) => {
+quizForm.addEventListener(('submit'), (event) => {
   event.preventDefault()
   showResults()
 })

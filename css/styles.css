@@ -163,8 +163,12 @@ main {
   border-radius: 7px;
   padding: 5px;
   border: none;
+
 }
 
+.form-control input::placeholder {
+  color: #1d2e42;
+}
 
 .continue-container {
   display: flex;
@@ -187,35 +191,23 @@ main {
 /*progressbar*/
 .progress-bar-container {
   width: 100%;
-}
-
-.progress-bar {
-  background: white;
-  height: 10px;
-  width: 100%;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .bar {
-  height: 10px;
+  height: 15px;
   border-radius: 5px;
-  width: 7%;
-  background: rgb(59, 59, 227);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  transition: all 0.25s ease-in-out;
+  background-color: white;
+
 }
 
-.bar span {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #1d2e42;
+.progress-fill {
+  height: 100%;
+  background-color: blue;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
 }
 
 form {
@@ -235,13 +227,12 @@ legend {
 
 .form-questions,
 .form-result {
-  /* font-size: 16px; */
   flex: 1;
   flex-direction: column;
   padding: 0 7px;
   border-radius: 10px;
   border: 2px solid #1d2e42;
-  min-height: 310px;
+  min-height: 200px;
 }
 
 /*här stod det tidigare bara .form-questions istället för .form-questions p. Vet inte varför men det gjorde att paddingen i den ovanför inte funkade så ändrade det*/

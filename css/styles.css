@@ -147,18 +147,15 @@ main {
   border-radius: 10px;
   border: 2px solid #1d2e42;
   width: 300px;
-  height: 300px; 
+  height: 300px;
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 100%; 
+  height: 100%;
 
-  
-
-  
 }
 
 .form-control input {
@@ -174,7 +171,6 @@ main {
   justify-content: center;
   padding: 10px 0;
 }
-
 
 
 #quiz-section:not([hidden]) {
@@ -227,7 +223,6 @@ form {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  overflow: hidden;
   position: relative;
 }
 
@@ -243,13 +238,8 @@ legend {
   /* font-size: 16px; */
   flex: 1;
   flex-direction: column;
-
   padding: 0 7px;
-  /*display: flex;*/
   border-radius: 10px;
-  transform: translateX(100%);
-  opacity: 0;
-  display: none;
   border: 2px solid #1d2e42;
   min-height: 310px;
 }
@@ -262,72 +252,6 @@ legend {
 }
 
 
-.form-questions:not([hidden]),
-.form-result:not([hidden]) {
-  opacity: 1;
-  transform: translateX(0);
-  display: flex;
-}
-
-.slide-in-right {
-  animation: slideInRight 0.25s linear;
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-
-}
-
-.slide-out-left {
-  animation: slideOutLeft 0.25s linear;
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-
-.slide-in-left {
-  animation: slideInLeft 0.25s linear;
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-
-}
-
-.slide-out-right {
-  animation: slideOutRight 0.25s linear;
-}
-
-@keyframes slideOutRight {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-
 .answer-container {
   display: flex;
   flex-direction: row;
@@ -339,7 +263,11 @@ legend {
   background-color: #1d2e42;
   color: #efe8e0;
   font-size: 16px;
+  transition: 0.25s linear;
+}
 
+.answer-container:hover {
+  background-color: #0d151f;
 }
 
 .button-container {
@@ -348,18 +276,14 @@ legend {
   justify-content: space-between;
 }
 
-#back-button[hidden] {
-  visibility: hidden;
-  display: block;
-  /* Don't delete!! This is so that the next-button stays to the right when backbutton is not visable */
-}
-
+/*
 #retake-button[hidden] {
   visibility: hidden;
 
 }
+  */
 
-.quiz-buttons,
+.quiz-buttons:not([hidden]),
 .intro-continue {
   width: 100px;
   height: 50px;
@@ -372,6 +296,14 @@ legend {
   box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
   text-align: center;
 }
+
+/*
+.quiz-buttons:focus-visible {
+  outline: 2px solid yellow;
+  outline-offset: -2px;
+  border-radius: 2px;
+}
+*/
 
 #footer {
   background-color: #1d2e42;

@@ -1,15 +1,14 @@
 const formQuestions = Array.from(document.getElementsByClassName('form-questions'))
 
 //Buttons
-const nextButton = document.getElementById('next-button')
-const backButton = document.getElementById('back-button')
+
 const resultButton = document.getElementById('result-button')
 const retakeButton = document.getElementById('retake-button')
 const resultsPage = document.getElementById('results')
 const bar = document.getElementById('bar')
 const percent = document.getElementById('percent-bar')
 const continueToQuiz = document.getElementById('intro-continue')
-const startQuizButton = document.getElementById('start-quiz-button')
+
 const announcer = document.getElementById('announcer')
 
 
@@ -21,87 +20,84 @@ const userInfoSection = document.getElementById('user-info')
 
 
 
-let index = 0;
+// let index = 0;
 
 continueToQuiz.addEventListener('click', () => {
-  announcer.textContent = 'Moved to user information section'
+
   introSection.hidden = true
-  quizSection.hidden = false
+  userInfoSection.hidden = false
+  window.location.hash = '#user-info';
+  document.getElementById('name').focus();
+  announcer.textContent = 'Moved to user information section';
 
 })
 
-startQuizButton.addEventListener('click', () => {
-  const quizQuestion = document.getElementById('question-one')
-  quizQuestion.hidden = false
-  nextButton.hidden = false
-  startQuizButton.hidden = true
+const userInfoForm = document.getElementById('user-info-form');
+
+userInfoForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  quizSection.hidden = false
   userInfoSection.hidden = true
 
 })
 
 
 //function that ensures the right buttons and questions are showing at the right time
-const showNextQuestion = (i) => {
+// const showNextQuestion = (i) => {
 
-  if (i >= (formQuestions.length - 1)) {
-    return
-  } else if (i >= 0) {
+//   if (i >= (formQuestions.length - 1)) {
+//     return
+//   } else if (i >= 0) {
 
-    const currentQuestion = formQuestions[i]
-    const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
-
-    if (i > 0) {
-      const prevQuestion = formQuestions[(i - 1) % formQuestions.length]
-      currentQuestion.classList.add('slide-out-left')
-    }
-
-    nextQuestion.classList.add('slide-in-right')
-    console.log(nextQuestion)
-
-    backButton.removeAttribute('hidden')
-    nextQuestion.removeAttribute('hidden')
-    currentQuestion.setAttribute('hidden', true)
+//     const currentQuestion = formQuestions[i]
+//     const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
 
 
-    if (i === formQuestions.length - 2) {
-      nextButton.setAttribute('hidden', true)
-      resultButton.removeAttribute('hidden')
-    }
+//     console.log(nextQuestion)
 
-    index += 1
-    moveBar(index)
-    console.log(index)
-  }
-}
-
-const showPrevQuestion = (i) => {
+//     backButton.removeAttribute('hidden')
+//     nextQuestion.removeAttribute('hidden')
+//     currentQuestion.setAttribute('hidden', true)
 
 
-  if (i >= 1) {
-    const currentQuestion = formQuestions[i]
-    const prevQuestion = formQuestions[(i - 1) % formQuestions.length]
+//     if (i === formQuestions.length - 2) {
+//       nextButton.setAttribute('hidden', true)
+//       resultButton.removeAttribute('hidden')
+//     }
 
-    const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
+//     index += 1
+//     moveBar(index)
+//     console.log(index)
+//   }
+// }
 
-    nextQuestion.classList.add('slide-out-right')
-    prevQuestion.classList.add('slide-in-left')
+// const showPrevQuestion = (i) => {
 
-    currentQuestion.setAttribute('hidden', true)
-    prevQuestion.removeAttribute('hidden')
 
-    if (i === formQuestions.length - 1) {
-      resultButton.setAttribute('hidden', true)
-      nextButton.removeAttribute('hidden')
-    }
-    if (i === 1) {
-      backButton.setAttribute('hidden', true)
-    }
-  }
+//   if (i >= 1) {
+//     const currentQuestion = formQuestions[i]
+//     const prevQuestion = formQuestions[(i - 1) % formQuestions.length]
 
-  index -= 1
-  moveBar(index)
-  console.log(index)
-}
+
+//     //nextQuestion.classList.add('slide-out-right')
+//     //prevQuestion.classList.add('slide-in-left')
+
+//     currentQuestion.setAttribute('hidden', true)
+//     prevQuestion.removeAttribute('hidden')
+
+//     if (i === formQuestions.length - 1) {
+//       resultButton.setAttribute('hidden', true)
+//       nextButton.removeAttribute('hidden')
+//     }
+//     if (i === 1) {
+//       backButton.setAttribute('hidden', true)
+//     }
+//   }
+
+//   index -= 1
+
+// }
 
 const countScore = () => {
   let points = document.querySelectorAll('input[value="true"]:checked')
@@ -129,22 +125,19 @@ const wrongQuestions = () => {
 }
 
 
-const showResults = (i) => {
+const showResults = () => {
   const score = document.getElementById('score')
   const flunked = document.getElementById('flunked')
   const resultsMessage = document.getElementById('results-message')
-  const currentQuestion = formQuestions[i]
+  //const currentQuestion = formQuestions[i]
   const pointTotal = 4
   let points = countScore()
   let questions = wrongQuestions()
 
-  currentQuestion.classList.add('slide-out-left')
-  resultsPage.classList.add('slide-in-right')
-
-  backButton.setAttribute('hidden', true)
-  nextButton.setAttribute('hidden', true)
+  //backButton.setAttribute('hidden', true)
+  //nextButton.setAttribute('hidden', true)
   resultButton.setAttribute('hidden', true)
-  currentQuestion.setAttribute('hidden', true)
+  //currentQuestion.setAttribute('hidden', true)
   resultsPage.removeAttribute('hidden')
   retakeButton.removeAttribute('hidden')
 
@@ -170,31 +163,6 @@ const showResults = (i) => {
   } else if (points === pointTotal) {
     resultsMessage.innerHTML = 'Winner, winner chicken dinner'
   }
-  moveBar(4)
-}
-
-const moveBar = (i) => {
-
-  switch (i) {
-    case 0:
-      bar.style.width = "7%"
-      break
-    case 1:
-      bar.style.width = "25%"
-      break
-    case 2:
-      bar.style.width = "50%"
-      break
-    case 3:
-      bar.style.width = "75%"
-      break
-    case 4:
-      bar.style.width = "100%"
-      break
-    default:
-      bar.style.width = "7%"
-      break
-  }
 }
 
 
@@ -202,17 +170,19 @@ const moveBar = (i) => {
 
 
 
-nextButton.addEventListener(('click'), () => {
-  showNextQuestion(index)
-})
 
-backButton.addEventListener(('click'), () => {
-  showPrevQuestion(index)
-})
+
+//nextButton.addEventListener(('click'), () => {
+//  showNextQuestion(index)
+//})
+
+//backButton.addEventListener(('click'), () => {
+//  showPrevQuestion(index)
+//})
 
 resultButton.addEventListener(('click'), (event) => {
   event.preventDefault()
-  showResults(index)
+  showResults()
 })
 
 //eventlistener där vi för "Retake quiz" knappen där vi ser till att den laddar om från quizet, inte introduction. 

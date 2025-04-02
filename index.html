@@ -17,16 +17,11 @@
 
 <body>
   <a
-    href="#intro-continue"
+    href="#main-content"
     class="skip-link"
     aria-label="skip link"
-    aria-describedby="Link to skip ahead and start quiz section"
   >Skip to main content</a>
-  <header
-    id="header"
-    role="navigation"
-    aria-describedby="hahaha"
-  >
+  <header id="header">
     <div class="header-content">
       <h1>
         Access your ability
@@ -64,7 +59,7 @@
     />
   </section>
 
-  <main id="main">
+  <main id="main-content">
 
     <section id="introduction-section">
       <div
@@ -87,6 +82,69 @@
       </div>
     </section>
 
+
+
+    <section
+      id="user-info"
+      hidden
+    >
+      <h2>Your information</h2>
+      <form id="user-info-form">
+        <div class="form-control">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            aria-required="true"
+            aria-describedby="name-error"
+            placeholder="John Doe"
+          />
+          <div
+            id="name-error"
+            class="error"
+            role="alert"
+            hidden
+          ></div>
+        </div>
+        <div class="form-control">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            aria-required="true"
+            aria-describedby="email-hint email-error"
+            placeholder="name@example.com"
+          />
+          <div
+            id="email-hint"
+            class="hint"
+          ></div>
+          <div
+            id="email-error"
+            class="error"
+            role="alert"
+            hidden
+          ></div>
+        </div>
+        <div class="form-control">
+          <button
+            type="submit"
+            class="quiz-buttons"
+            id="start-quiz"
+          >
+            Start Quiz
+          </button>
+        </div>
+      </form>
+    </section>
+
+
+
+
+
+
     <section
       id="quiz-section"
       hidden
@@ -96,82 +154,52 @@
         Accessibility Quiz
       </h2>
 
+      <!-- Progressbar -->
       <div
         class="progress-bar-container"
-        hidden
+        role="status"
+        aria-live="polite"
       >
-        <div class="progress-bar">
+        <div
+          class="bar"
+          id="bar"
+          aria-label="progress bar"
+          aria-describedby="A bar showing progress of quiz"
+        >
           <div
-            class="bar"
-            id="bar"
-            aria-label="progress bar"
-            aria-describedby="A bar showing progress of quiz"
-          ><span id="percent-bar"></span></div>
+            class="progress-fill"
+            style="width: 0%"
+          >
+          </div>
         </div>
       </div>
 
-      <form>
-
-        <fieldset
-          class="user-info"
-          id="user-info"
-        >
-          <div class="form-control">
-            <label for="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              aria-required="true"
-              aria-describedby="name-error"
-              placeholder="Example: John Doe"
-            />
-            <div
-              id="name-error"
-              class="error"
-              role="alert"
-              hidden
-            ></div>
-          </div>
-          <div class="form-control">
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              aria-required="true"
-              aria-describedby="email-hint email-error"
-              placeholder="Example: name@example.com"
-            />
-            <div
-              id="email-hint"
-              class="hint"
-            >Example: name@example.com</div>
-            <div
-              id="email-error"
-              class="error"
-              role="alert"
-              hidden
-            ></div>
-          </div>
-          <!-- ska vi göra att man fyller i namn här eller inte? -->
-        </fieldset>
+      <!-- Intructions for the quiz  -->
+      <div
+        class="quiz-instructions"
+        role="group"
+        aria-labelledby="instructions-heading"
+      >
+        <h3 id="instructions-heading">Instructions</h3>
+        <p>Use tab to navigate between sections, space to select an option</p>
+      </div>
 
 
-
+      <!-- Quiz -->
+      <form id="quiz">
         <fieldset
           id="question-one"
           class="form-questions"
-          hidden
           aria-label="question 1"
         >
           <legend>
             Question 1
           </legend>
-          <h3>Importance of image accessibility</h3>
-          <p>Which of the following is importat for web accessebility?</p>
 
-          <span class="answer-container">
+          <h3>Importance of image accessibility</h3>
+          <p>Which of the following is important for web accessebility?</p>
+
+          <div class="answer-container">
             <input
               id="question-1-1"
               name="question-1"
@@ -179,9 +207,9 @@
               type="radio"
             >
             <label for="question-1-1">Using only images for text content</label>
-          </span>
+          </div>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-1-2"
               name="question-1"
@@ -189,9 +217,9 @@
               type="radio"
             >
             <label for="question-1-2">Ensuring that all important images have discriptive alt-text</label>
-          </span>
+          </div>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-1-3"
               name="question-1"
@@ -199,21 +227,21 @@
               type="radio"
             >
             <label for="question-1-3">Avoiding keyboard shortcuts</label>
-          </span>
+          </div>
         </fieldset>
 
         <fieldset
           id="question-two"
           class="form-questions"
-          hidden
           aria-label="question 2"
         >
           <legend>
             Question 2
           </legend>
+
           <h3>Understanding WCAG</h3>
           <p>What does WCAG stand for?</p>
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-2-1"
               name="WCAG"
@@ -221,9 +249,9 @@
               type="radio"
             >
             <label for="question-2-1">Web Content Accessebility Guidlines</label>
-          </span>
+          </div>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-2-2"
               name="WCAG"
@@ -231,9 +259,9 @@
               type="radio"
             >
             <label for="question-2-2">Web Code Accessebility Group</label>
-          </span>
+          </div>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-2-3"
               name="WCAG"
@@ -241,13 +269,12 @@
               type="radio"
             >
             <label for="question-2-3">Website Creation and Accessebility Guide</label>
-          </span>
+          </div>
         </fieldset>
 
         <fieldset
           id="question-three"
           class="form-questions"
-          hidden="true"
           aria-label="question 3"
         >
           <legend>
@@ -256,7 +283,7 @@
           <h3>Cognitive disability</h3>
           <p>Which of these practices help users with cognitive disability?</p>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-3-1"
               name="cognitive-disability"
@@ -264,9 +291,9 @@
               type="radio"
             >
             <label for="question-3-1">Using clear and simple language</label>
-          </span>
+          </div>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-3-2"
               name="cognitive-disability"
@@ -274,9 +301,9 @@
               type="radio"
             >
             <label for="question-3-2">Making websites only accessible with a mouse</label>
-          </span>
+          </div>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-3-3"
               name="cognitive-disability"
@@ -284,14 +311,13 @@
               type="radio"
             >
             <label for="question-3-3">Using complex forms with multiple steps</label>
-          </span>
+          </div>
 
         </fieldset>
 
         <fieldset
           id="question-four"
           class="form-questions"
-          hidden="true"
           aria-label="question 4"
         >
           <legend>
@@ -300,7 +326,7 @@
           <h3>Color and Contrast for Accessibility </h3>
           <p>What should you consider when using color in web design for accessibility?</p>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-4-1"
               name="color-accessibility"
@@ -308,9 +334,9 @@
               type="radio"
             >
             <label for="question-4-1">Colors should be used only for decoration</label>
-          </span>
+          </div>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-4-2"
               name="color-accessibility"
@@ -318,9 +344,9 @@
               type="radio"
             >
             <label for="question-4-2">Ensure that there is enough contrast between text and background</label>
-          </span>
+          </div>
 
-          <span class="answer-container">
+          <div class="answer-container">
             <input
               id="question-4-3"
               name="color-accessibility"
@@ -328,7 +354,7 @@
               type="radio"
             >
             <label for="question-4-3">Avoid any use of color altogether</label>
-          </span>
+          </div>
 
         </fieldset>
 
@@ -347,36 +373,12 @@
             role="figure"
           />
           <h3 id="score">Your score is -/-</h3>
-          <h2 id="flunked">Questions you got wrong are: -</h2>
+          <h3 id="flunked">Questions you got wrong are: ---</h3>
           <p id="results-message">We hope you learned from this experiance</p>
         </fieldset>
 
         <div class="button-container">
           <!-- Change the names on these divs later on -->
-          <button
-            id="start-quiz-button"
-            type="button"
-            class="quiz-buttons"
-          >
-            Start Quiz
-          </button>
-          <button
-            id="back-button"
-            type="button"
-            class="quiz-buttons"
-            hidden="true"
-          >
-            Back
-          </button>
-
-          <button
-            id="next-button"
-            type="button"
-            class="quiz-buttons"
-            hidden
-          >
-            Next
-          </button>
 
           <button
             id="result-button"
@@ -403,12 +405,9 @@
         aria-live="polite"
         role="alert"
       >
-        default
       </div>
 
     </section>
-
-
 
   </main>
 

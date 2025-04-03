@@ -7,7 +7,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   />
-  <title>Access Your Ability</title>
+  <title>Web Accessebility Quiz</title>
   <link
     rel="stylesheet"
     href="css/styles.css"
@@ -24,7 +24,7 @@
   <header id="header">
     <div class="header-content">
       <h1>
-        Access your ability
+        Web Accessebility Quiz
       </h1>
       <nav
         role="navigation"
@@ -67,7 +67,10 @@
         role="feed"
       >
         <h2>Introduction</h2>
-        <p>Our quiz is accessible with clear text, high contrast, keyboard navigation, and alternative text for images.
+        <p>Our quiz is designed with accessibility in mind, ensuring an inclusive experience for all users. We provide
+          high contrast mode for better readability, reduced motion support to minimize distractions, and keyboard
+          navigation for users who rely on assistive technologies. Additionally, our quiz uses semantic HTML and ARIA
+          attributes to improve screen reader compatibility, making it accessible to visually impaired users.
         </p>
         <div class="continue-container">
 
@@ -97,7 +100,7 @@
             id="name"
             name="name"
             aria-required="true"
-            aria-describedby="name-error"
+            aria-description="name error"
             placeholder="John Doe"
           />
           <div
@@ -114,7 +117,7 @@
             id="email"
             name="email"
             aria-required="true"
-            aria-describedby="email-hint email-error"
+            aria-description="email-hint email-error"
             placeholder="name@example.com"
           />
           <div
@@ -163,7 +166,7 @@
           class="bar"
           id="bar"
           aria-label="progress bar"
-          aria-describedby="A bar showing progress of quiz"
+          aria-description="A bar showing progress of quiz"
         >
           <div
             class="progress-fill"
@@ -183,7 +186,7 @@
         class="quiz-instructions"
         id="quiz-instructions"
         role="group"
-        aria-labelledby="instructions-heading"
+        aria-label="instructions-heading"
       >
         <h3 id="instructions-heading">Instructions</h3>
         <p>Use tab to navigate between sections, space to select an option</p>
@@ -373,24 +376,31 @@
           hidden
         ></div>
 
-        <fieldset
+        <div
           id="results"
           class="form-result"
           hidden
           aria-label="quiz results"
         >
-          <legend>
-            Results!
-          </legend>
-          <img
-            src="./assets/celebrate2.jpg"
-            alt="motivational image"
-            role="figure"
-          />
-          <h3 id="score">Your score is -/-</h3>
-          <h3 id="flunked">Questions you got wrong are: ---</h3>
-          <p id="results-message">We hope you learned from this experiance</p>
-        </fieldset>
+          <div id="img-container">
+            <h3>Results</h3>
+            <img
+              src="./assets/celebrate2.jpg"
+              alt="Image of fireworks"
+              role="figure"
+              aria-description="#img-description"
+            />
+          </div>
+          <div class="result-container">
+            <p
+              id="img-description"
+              hidden
+            >Image of fireworks to celebrate the quiz is completed</p>
+            <h3 id="score">Your score is -/-</h3>
+            <h3 id="flunked">Questions you got wrong are: ---</h3>
+            <p id="results-message">We hope you learned from this experiance</p>
+          </div>
+        </div>
 
         <div class="button-container">
           <!-- Change the names on these divs later on -->

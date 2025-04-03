@@ -20,6 +20,7 @@ const emailInput = document.getElementById('email');
 const nameError = document.getElementById('name-error');
 const emailError = document.getElementById('email-error');
 let userName = '';
+const radioErrorMessage = document.getElementById('answer-error')
 
 
 //Sections
@@ -28,14 +29,17 @@ const quizSection = document.getElementById('quiz-section')
 const userInfoSection = document.getElementById('user-info')
 const userInfoForm = document.getElementById('user-info-form');
 const quizForm = document.getElementById('quiz')
-const radioErrorMessage = document.getElementById('answer-error')
+
 
 //progress bar
 const progressFill = document.querySelector('.progress-fill')
 const progressText = document.querySelector('.progress-text')
 
+//array 
+const radioFour = Array.from(document.querySelectorAll('input[name="color-accessibility"]'))
 
 const pointTotal = 4
+
 
 //When we click continue to quiz
 continueToQuiz.addEventListener('click', () => {
@@ -132,35 +136,40 @@ userInfoForm.addEventListener('submit', (e) => {
 })
 //when we click start quiz
 
+const isChecked = (array) => {
+  const checked = array.some(item => item.checked)
+  if (!checked) {
+    radioErrorMessage.hidden = false
+    radioErrorMessage.textContent = "you have to choose an answer"
+    announcer.textContent = 'you have to choose an answer'
+  } else {
+    radioErrorMessage.hidden = true;
+  }
+  return checked
+}
+
+
+
 //function that ensures the right buttons and questions are showing at the right time
 const showNextQuestion = (i) => {
+  const currentQuestion = formQuestions[i]
+  const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
+  let radioArray = Array.from(currentQuestion.querySelectorAll('input[type="radio"]'))
 
   if (i >= (formQuestions.length - 1)) {
     return
   } else if (i >= 0) {
 
-    const currentQuestion = formQuestions[i]
-    const nextQuestion = formQuestions[(i + 1) % formQuestions.length]
-
-    let selected = (document.querySelectorAll('input[value="true"]:checked').length + document.querySelectorAll('input[value="false"]:checked').length)
-
-    if ((i + 1) != selected) {
-      radioErrorMessage.hidden = false
-      radioErrorMessage.textContent = "you have to choose an answer"
-      announcer.textContent = 'you have to choose an answer'
-
+    if (!isChecked(radioArray)) {
       return
 
-      //felmeddelande
-    }
-    if (selected >= 1) {
-      radioErrorMessage.hidden = true
-    }
 
-    backButton.removeAttribute('hidden')
-    nextQuestion.removeAttribute('hidden')
-    currentQuestion.setAttribute('hidden', true)
+    } else {
 
+      backButton.removeAttribute('hidden')
+      nextQuestion.removeAttribute('hidden')
+      currentQuestion.setAttribute('hidden', true)
+    }
 
     if (i === formQuestions.length - 2) {
       nextButton.setAttribute('hidden', true)
@@ -172,13 +181,12 @@ const showNextQuestion = (i) => {
     document.getElementById('question-2-1').focus()
     document.getElementById('question-3-1').focus()
     document.getElementById('question-4-1').focus()
-    //quizForm.querySelector('input[type="radio"]').focus()
     announcer.textContent = 'Moved to next question'
   }
 }
 
 const showPrevQuestion = (i) => {
-  selected
+  radioErrorMessage.hidden = true
 
   if (i >= 1) {
 
@@ -199,11 +207,6 @@ const showPrevQuestion = (i) => {
 
   index -= 1
   announcer.textContent = 'Moved to previous question';
-
-  document.getElementById('question-1-1').focus()
-  document.getElementById('question-2-1').focus()
-  document.getElementById('question-3-1').focus()
-  //quizForm.querySelector('input[type="radio"]').focus()
 
 }
 
@@ -262,18 +265,7 @@ const showResults = (i) => {
 
   let selected = (document.querySelectorAll('input[value="true"]:checked').length + document.querySelectorAll('input[value="false"]:checked').length)
 
-  if ((i + 1) != selected) {
-    radioErrorMessage.hidden = false
-    radioErrorMessage.textContent = "you have to choose an answer"
-    announcer.textContent = 'you have to choose an answer'
 
-    return
-
-    //felmeddelande
-  }
-  if (selected >= 1) {
-    radioErrorMessage.hidden = true
-  }
 
 
   backButton.setAttribute('hidden', true)
@@ -300,11 +292,11 @@ const showResults = (i) => {
   if (points === 0) {
     resultsMessage.innerHTML = 'Yikes...'
   } else if (points === 1) {
-    resultsMessage.innerHTML = 'det här säger sig självt'
+    resultsMessage.innerHTML = 'This speaks for itself'
   } else if (points === 2) {
-    resultsMessage.innerHTML = 'wow. hälften'
+    resultsMessage.innerHTML = 'Wow. Half'
   } else if (points === 3) {
-    resultsMessage.innerHTML = 'nära skjuter ingen hare'
+    resultsMessage.innerHTML = 'Close, but not quite'
   } else if (points === pointTotal) {
     resultsMessage.innerHTML = 'Winner, winner chicken dinner'
   }
@@ -320,7 +312,11 @@ backButton.addEventListener(('click'), () => {
 
 quizForm.addEventListener(('submit'), (event) => {
   event.preventDefault()
-  showResults(index)
+  if (!isChecked(radioFour)) {
+    return
+  } else {
+    showResults(index)
+  }
 })
 
 retakeButton.addEventListener(('click'), () => {
@@ -329,6 +325,8 @@ retakeButton.addEventListener(('click'), () => {
   introSection.hidden = false
   retakeButton.hidden = false
   quizSection.hidden = true
+
+  //Visa quiz section (tror jag) och cleara svaren sen tidigare
 
   /*
   let infoInput = [document.getElementById('name'), document.getElementById('email')]
@@ -346,7 +344,21 @@ retakeButton.addEventListener(('click'), () => {
 
   progressFill.style.width = `0%`
   //clearing progress bar
-
+  continueToQuiz.focus()
 
 })
-//eventlistener där vi för "Retake quiz" knappen där vi ser till att den laddar om från quizet, inte introduction. 
+//eventlistener där vi för "Retake quiz" knappen där vi ser till att den laddar om från quizet, inte introduction.  
+
+/*
+let radioButtons = (document.querySelectorAll('input[type="radio"]'))
+
+radioButtons.forEach((button) => {
+  button.addEventListener(('keydown'), (event) => {
+    button.checked = true
+    if (event.key === ' ' || event.key === 'enter') {
+      nextButton.focus()
+    }
+
+  })
+})
+  */

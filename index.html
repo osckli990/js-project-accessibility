@@ -99,7 +99,6 @@
             aria-required="true"
             aria-describedby="name-error"
             placeholder="John Doe"
-            required
           />
           <div
             id="name-error"
@@ -117,7 +116,6 @@
             aria-required="true"
             aria-describedby="email-hint email-error"
             placeholder="name@example.com"
-            required
           />
           <div
             id="email-hint"
@@ -174,12 +172,16 @@
           </div>
 
         </div>
-        <p class="progress-text">0 of 4 questions answered</p>
+        <p
+          class="progress-text"
+          id="progress-text"
+        >0 of 4 questions answered</p>
       </div>
 
       <!-- Intructions for the quiz  -->
       <div
         class="quiz-instructions"
+        id="quiz-instructions"
         role="group"
         aria-labelledby="instructions-heading"
       >
@@ -364,6 +366,13 @@
 
         </fieldset>
 
+        <div
+          id="answer-error"
+          class="error"
+          role="alert"
+          hidden
+        ></div>
+
         <fieldset
           id="results"
           class="form-result"
@@ -374,7 +383,7 @@
             Results!
           </legend>
           <img
-            src=""
+            src="./assets/celebrate2.jpg"
             alt="motivational image"
             role="figure"
           />

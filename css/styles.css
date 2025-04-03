@@ -74,7 +74,7 @@ li {
 .nav-links {
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #banner {
@@ -252,21 +252,29 @@ legend {
 }
 
 .form-result {
-  background-color: aqua;
-  
+  background-color: black;
+  color: white;
+  max-width: 500px;
+
 }
+
+.wrong-answers {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+
 
 #img-container h3 {
   position: absolute;
-  right: 40%;  
-  color: white; 
+  right: 40%;
+  color: white;
   text-align: center;
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .result-container {
-  
-
+  padding: 20px;
 }
 
 .form-result img {

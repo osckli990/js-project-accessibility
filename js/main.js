@@ -282,7 +282,19 @@ const showResults = (i) => {
   announcer.textContent = 'Moved to result page'
 
   if (points < pointTotal) {
-    flunked.innerHTML = `Questions you got wrong are: ${questions.map(q => { return q }).join(", ")}`
+    flunked.innerHTML = `<h3>Questions you got wrong are: </h3><ul>${questions.map(q => { return `<li class="wrong-answers">${q}</li>` }).join(" ")}</ul>`
+
+    /*
+    <ul>
+      ${recipe.nutrition.ingredients.map(ingredient => {
+      const fraction = decimalToFraction(ingredient.amount);
+      return `<li>${fraction} ${ingredient.unit} ${ingredient.name}</li>`
+    }).join('')}
+    </ul>
+    */
+
+
+
   } else {
     flunked.innerHTML = ''
   }

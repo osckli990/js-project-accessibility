@@ -112,10 +112,9 @@ main {
 
 .about-us {
   padding: 20px;
-  background-color: white;
+  background-color: rgb(228, 229, 230);
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
   font-size: 18px;
 }
 
@@ -141,7 +140,8 @@ main {
 
 
 .introduction {
-  background-color: lightgray;
+  background-color: rgb(228, 229, 230);
+  border-radius: 10px;
 }
 
 #user-info:not([hidden]) {

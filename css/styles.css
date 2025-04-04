@@ -6,7 +6,7 @@
 }
 
 :root {
-  --gray: #f1f3f4; 
+  --gray: #f1f3f4;
 }
 
 body {
@@ -15,11 +15,11 @@ body {
   min-height: 100vh;
 }
 
-h2{
+h2 {
   font-size: 26px;
 }
 
-h3 { 
+h3 {
   font-size: 22px;
 }
 
@@ -156,7 +156,7 @@ main {
 .introduction {
   background-color: var(--gray);
   border-radius: 10px;
- 
+
 }
 
 #user-info:not([hidden]) {
@@ -192,7 +192,7 @@ main {
 
 label {
   font-size: 18px;
-  
+
 }
 
 .continue-container {

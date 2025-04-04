@@ -15,8 +15,16 @@ body {
   min-height: 100vh;
 }
 
+h2{
+  font-size: 26px;
+}
+
+h3 { 
+  font-size: 22px;
+}
+
 p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .skip-link {
@@ -121,7 +129,6 @@ main {
   background-color: var(--gray);
   margin: 10px;
   border-radius: 10px;
-  font-size: 18px;
 }
 
 
@@ -136,6 +143,7 @@ main {
   align-items: center;
   justify-content: center;
 }
+
 
 
 #introduction-section h2,
@@ -168,20 +176,23 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
-
 }
 
 .form-control input {
-  font-size: 16px;
+  font-size: 18px;
   height: 40px;
   border-radius: 7px;
   padding: 5px;
   border: none;
-
 }
 
 .form-control input::placeholder {
   color: #1d2e42;
+}
+
+label {
+  font-size: 18px;
+  
 }
 
 .continue-container {

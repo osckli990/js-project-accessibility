@@ -70,7 +70,6 @@ const isValidEmail = (email) => {
 }
 
 
-
 nameInput.addEventListener('input', () => {
   if (nameInput.value.trim()) {
     clearError(nameInput, nameError);

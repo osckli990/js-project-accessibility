@@ -107,6 +107,7 @@ main {
   justify-content: center;
   align-items: center;
   flex: 1;
+  max-width: 500px;
 }
 
 .about-us {
@@ -324,6 +325,10 @@ radio:focus-visible {
   color: white;
   box-shadow: 0px 0px 10px rgba(29, 46, 66, 0.3);
   text-align: center;
+}
+
+.intro-continue {
+  height: 50px;
 }
 
 #previous-button[hidden] {

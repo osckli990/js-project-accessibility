@@ -150,11 +150,11 @@ main {
   border: 2px solid #1d2e42;
   width: 300px;
   height: 250px;
-  background-color: lightgray;
+  background-color: rgb(228, 229, 230);
 }
 
 .error {
-  color: red;
+  color: rgb(143, 3, 3);
 }
 
 .form-control {

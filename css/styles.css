@@ -110,7 +110,8 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px 0 20px 0;
+  color: black;
+
 }
 
 
@@ -159,7 +160,6 @@ main {
 #introduction-section:not([hidden]) {
   margin-top: -4px;
   padding: 7px;
-  color: white;
   max-width: 446px;
   display: flex;
   align-items: center;
@@ -171,11 +171,11 @@ main {
 #introduction-section h2,
 #introduction-section p {
   margin: 5px;
-  color: black;
 }
 
 
 .introduction {
+  margin-top: 7px;
   background-color: var(--gray);
   border-radius: 10px;
   padding: 20px;
@@ -184,6 +184,7 @@ main {
 
 #user-info:not([hidden]) {
   padding: 10px;
+  margin-top: 7px;
   border-radius: 10px;
   max-width: 446px;
   background-color: var(--gray);
@@ -235,36 +236,43 @@ label {
 
 
 #quiz-section:not([hidden]) {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin: 5px;
-  color: #1d2e42;
-
 }
 
-#quiz-head {
-  padding-bottom: 10px;
+.quiz-instructions {
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+
 }
 
 /*progressbar*/
 .progress-bar-container {
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
+  align-self: center;
 
 }
 
 .bar {
   height: 15px;
   border-radius: 5px;
-  background-color: lightgray;
-
+  background-color: rgb(221, 221, 252)
 }
 
 .progress-fill {
   height: 100%;
-  background-color: blue;
+  background-color: rgb(13, 13, 111);
   border-radius: 5px;
   transition: all 0.25s ease-in-out;
+}
+
+.progress-text {
+  text-align: center;
 }
 
 form {
@@ -282,34 +290,50 @@ legend {
   text-align: center;
 }
 
-.form-questions {
-  flex: 1;
-  flex-direction: column;
-  padding: 0 7px;
+.form-questions:not([hidden]) {
+  padding: 10px;
   border-radius: 10px;
-  border: 2px solid #1d2e42;
-  min-height: 200px;
+  background-color: var(--gray);
+  border: none;
+  min-height: 300px;
   width: 100%;
   min-width: 100px;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.question-border {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2px;
+  background-color: var(--gray);
 }
 
 
-.form-questions p,
-.form-result p {
+.answer-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 5px;
+  margin: 10px 0;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  font-size: 16px;
+  transition: 0.25s linear;
+}
 
-  padding: 5px 0;
+.wrong-answers {
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
 .form-result {
   background-color: black;
   color: white;
   max-width: 500px;
-}
-
-.wrong-answers {
-  list-style-type: disc;
-  list-style-position: inside;
 }
 
 
@@ -331,22 +355,8 @@ legend {
 }
 
 
-.answer-container {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  padding: 5px;
-  margin: 5px 0;
-  border: 2px solid #1d2e42;
-  border-radius: 10px;
-  background-color: #1d2e42;
-  color: white;
-  font-size: 16px;
-  transition: 0.25s linear;
-}
-
 .answer-container:hover {
-  background-color: #0d151f;
+  background-color: rgb(221, 221, 252)
 }
 
 radio:focus-visible {
@@ -362,6 +372,7 @@ radio:focus-visible {
 
 .quiz-buttons:not([hidden]),
 .intro-continue {
+  min-width: 90px;
   width: auto;
   height: 50px;
   font-size: 18px;
@@ -378,7 +389,6 @@ radio:focus-visible {
 .intro-continue:hover {
   background-image: linear-gradient(to right, #1a0473, #120833)
 }
-
 
 
 #previous-button[hidden] {

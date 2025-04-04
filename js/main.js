@@ -242,7 +242,7 @@ const updateProgress = () => {
   console.log(percentage)
 
   progressFill.style.width = `${percentage}%`;
-  progressText.textContent = `${points} of ${pointTotal} sections completed`;
+  progressText.textContent = `${points}/${pointTotal} sections completed`;
   announcer.textContent = `${points} of ${pointTotal} sections completed`;
 }
 

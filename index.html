@@ -152,6 +152,17 @@
         Accessibility Quiz
       </h2>
 
+      <!-- Intructions for the quiz  -->
+      <div
+        class="quiz-instructions"
+        id="quiz-instructions"
+        role="group"
+        aria-label="instructions-heading"
+      >
+        <h3 id="instructions-heading">Instructions</h3>
+        <p>Use tab to navigate between sections, space to select an option</p>
+      </div>
+
       <!-- Progressbar -->
       <div
         class="progress-bar-container"
@@ -174,19 +185,10 @@
         <p
           class="progress-text"
           id="progress-text"
-        >0 of 4 questions answered</p>
+        >0/4 questions answered</p>
       </div>
 
-      <!-- Intructions for the quiz  -->
-      <div
-        class="quiz-instructions"
-        id="quiz-instructions"
-        role="group"
-        aria-label="instructions-heading"
-      >
-        <h3 id="instructions-heading">Instructions</h3>
-        <p>Use tab to navigate between sections, space to select an option</p>
-      </div>
+
 
 
       <!-- Quiz -->
@@ -197,7 +199,7 @@
           aria-label="question 1"
         >
           <legend>
-            Question 1
+            <span class="question-border">Question 1</span>
           </legend>
 
           <h3>Importance of image accessibility</h3>
@@ -241,7 +243,7 @@
           hidden
         >
           <legend>
-            Question 2
+            <span class="question-border">Question 2</span>
           </legend>
 
           <h3>Understanding WCAG</h3>
@@ -284,7 +286,7 @@
           hidden
         >
           <legend>
-            Question 3
+            <span class="question-border">Question 3</span>
           </legend>
           <h3>Cognitive disability</h3>
           <p>Which of these practices help users with cognitive disability?</p>
@@ -328,7 +330,7 @@
           hidden
         >
           <legend>
-            Question 4
+            <span class="question-border">Question 4</span>
           </legend>
           <h3>Color and Contrast for Accessibility </h3>
           <p>What should you consider when using color in web design for accessibility?</p>

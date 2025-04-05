@@ -243,18 +243,18 @@ label {
 }
 
 .quiz-instructions {
-  margin-bottom: 30px;
   padding: 10px;
   border-radius: 10px;
 
 }
 
 /*progressbar*/
-.progress-bar-container {
+.progress-bar-container:not([hidden]) {
   width: 70%;
   display: flex;
   flex-direction: column;
   align-self: center;
+  padding: 30px 0;
 
 }
 
@@ -272,6 +272,7 @@ label {
 }
 
 .progress-text {
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -325,35 +326,53 @@ legend {
   transition: 0.25s linear;
 }
 
+
+
 .wrong-answers {
   list-style-type: disc;
   list-style-position: inside;
 }
 
-.form-result {
-  background-color: black;
-  color: white;
+.form-result:not([hidden]) {
+  background-color: white;
   max-width: 500px;
+  background-color: var(--gray);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
 #img-container h3 {
   position: absolute;
-  right: 40%;
-  color: white;
   text-align: center;
-  font-size: 18px;
+  color: white;
+  font-size: 26px;
+  width: 100%; 
+
 }
 
 .result-container {
-  padding: 20px;
+  padding: 10px;
+  width: 100%;
+
 }
 
 .form-result img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
+#results-message {
+  font-size: 22px;
+}
+
+#flunked h4 {
+  font-size: 18px;
+}
 
 .answer-container:hover {
   background-color: rgb(221, 221, 252)

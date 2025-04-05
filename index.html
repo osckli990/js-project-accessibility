@@ -166,6 +166,7 @@
       <!-- Progressbar -->
       <div
         class="progress-bar-container"
+        id="progress-bar-container"
         role="status"
         aria-live="polite"
       >
@@ -199,10 +200,10 @@
           aria-label="question 1"
         >
           <legend>
-            <span class="question-border">Question 1</span>
+            <span class="question-border">Importance of image accessibility</span>
           </legend>
 
-          <h3>Importance of image accessibility</h3>
+
           <p>Which of the following is important for web accessebility?</p>
 
           <div class="answer-container">
@@ -243,10 +244,9 @@
           hidden
         >
           <legend>
-            <span class="question-border">Question 2</span>
+            <span class="question-border">Understanding WCAG</span>
           </legend>
 
-          <h3>Understanding WCAG</h3>
           <p>What does WCAG stand for?</p>
           <div class="answer-container">
             <input
@@ -286,9 +286,9 @@
           hidden
         >
           <legend>
-            <span class="question-border">Question 3</span>
+            <span class="question-border">Cognitive disability</span>
           </legend>
-          <h3>Cognitive disability</h3>
+
           <p>Which of these practices help users with cognitive disability?</p>
 
           <div class="answer-container">
@@ -330,9 +330,9 @@
           hidden
         >
           <legend>
-            <span class="question-border">Question 4</span>
+            <span class="question-border">Color and Contrast for Accessibility</span>
           </legend>
-          <h3>Color and Contrast for Accessibility </h3>
+
           <p>What should you consider when using color in web design for accessibility?</p>
 
           <div class="answer-container">
@@ -380,6 +380,8 @@
           hidden
           aria-label="quiz results"
         >
+          
+          
           <div id="img-container">
             <h3>Results</h3>
             <img
@@ -396,9 +398,10 @@
 
 
           <div class="result-container">
-            <h3 id="score">Your score is -/-</h3>
+            <p id="results-message"></p>
+            <p id="score"></p>
             <div id="flunked"></div>
-            <p id="results-message">We hope you learned from this experiance</p>
+            
           </div>
         </div>
 

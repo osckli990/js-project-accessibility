@@ -32,6 +32,7 @@ const quizForm = document.getElementById('quiz')
 
 
 //progress bar
+const progressContainer = document.getElementById('progress-bar-container')
 const progressFill = document.querySelector('.progress-fill')
 const progressText = document.querySelector('.progress-text')
 
@@ -93,6 +94,7 @@ userInfoForm.addEventListener('submit', (e) => {
   currentQuestion.hidden = false
   retakeButton.hidden = true
   nextButton.hidden = false
+
 
 
   let isValid = true;
@@ -274,31 +276,21 @@ const showResults = (i) => {
   resultsPage.removeAttribute('hidden')
   retakeButton.removeAttribute('hidden')
 
-  bar.hidden = true
+  progressContainer.hidden = true
   progressText.hidden = true
   instructions.hidden = true
 
   announcer.textContent = 'Moved to result page'
 
   if (points < pointTotal) {
-    flunked.innerHTML = `<h3>Questions you got wrong are: </h3><ul>${questions.map(q => { return `<li class="wrong-answers">${q}</li>` }).join(" ")}</ul>`
-
-    /*
-    <ul>
-      ${recipe.nutrition.ingredients.map(ingredient => {
-      const fraction = decimalToFraction(ingredient.amount);
-      return `<li>${fraction} ${ingredient.unit} ${ingredient.name}</li>`
-    }).join('')}
-    </ul>
-    */
-
+    flunked.innerHTML = `<h4>Questions you got wrong are: </h4><ul>${questions.map(q => { return `<li class="wrong-answers">${q}</li>` }).join(" ")}</ul>`
 
 
   } else {
     flunked.innerHTML = ''
   }
 
-  score.innerHTML = `Your score is ${points}/${pointTotal}`
+  score.innerHTML = `Your score is: ${points}/${pointTotal}`
 
   if (points === 0) {
     resultsMessage.innerHTML = 'Yikes...'
@@ -358,18 +350,3 @@ retakeButton.addEventListener(('click'), () => {
   continueToQuiz.focus()
 
 })
-//eventlistener där vi för "Retake quiz" knappen där vi ser till att den laddar om från quizet, inte introduction.  
-
-/*
-let radioButtons = (document.querySelectorAll('input[type="radio"]'))
-
-radioButtons.forEach((button) => {
-  button.addEventListener(('keydown'), (event) => {
-    button.checked = true
-    if (event.key === ' ' || event.key === 'enter') {
-      nextButton.focus()
-    }
-
-  })
-})
-  */

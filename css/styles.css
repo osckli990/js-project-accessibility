@@ -141,6 +141,24 @@ main {
   margin: 5px;
 }
 
+.our-team:not([hidden]) {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.person {
+  background-color: var(--gray);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+}
+
+.person h3 {
+  font-weight: 300;
+}
+
 .button-box {
   padding-top: 10px;
   display: flex;
@@ -350,7 +368,7 @@ legend {
   text-align: center;
   color: white;
   font-size: 26px;
-  width: 100%; 
+  width: 100%;
 
 }
 
